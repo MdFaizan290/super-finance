@@ -1,0 +1,157 @@
+.budget-form {
+    width: 45%;
+    min-height: 500px;
+    margin: 20px auto;
+    background-color: rgb(229, 223, 215);
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.form-body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.form-body h3 {
+    margin-bottom: 40px;
+}
+
+#inp {
+    display: block;
+    margin-bottom: 30px;
+    width: 70%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#inp:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.form-body button {
+    padding: 10px 25px;
+    border-radius: 8px;
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    .budget-form {
+        width: 40%;
+    }
+
+    #inp {
+        width: 65%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .budget-form {
+        width: 65%;
+        min-height: 450px;
+    }
+
+    #inp {
+        width: 80%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .budget-form {
+        width: 85%;
+        min-height: 420px;
+        margin-top: 20px;
+    }
+
+    .form-body {
+        padding: 25px 20px;
+    }
+
+    .form-body h3 {
+        margin-bottom: 30px;
+        font-size: 25px;
+    }
+
+    #inp {
+        width: 90%;
+        padding: 13px;
+        margin-bottom: 25px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .budget-form {
+        width: 92%;
+        min-height: 380px;
+        margin: 15px auto;
+    }
+
+    .form-body {
+        padding: 20px 15px;
+    }
+
+    .form-body h3 {
+        font-size: 23px;
+        margin-bottom: 25px;
+    }
+
+    #inp {
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .form-body button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .budget-form {
+        width: 95%;
+        min-height: 350px;
+    }
+
+    .form-body {
+        padding: 15px 10px;
+    }
+
+    .form-body h3 {
+        font-size: 21px;
+    }
+}
+
+/* .progress {
+    height: 20px;
+    background: grey;
+    border-radius: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: green;
+    border-radius: 10px;
+} */
+
+/* .cd { 
+    width: 40%;
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: rgb(240, 240, 173);
+    width: 40%;
+    box-shadow: 10px 8px 8px rgba(0, 0, 0, 0.15);
+}   */

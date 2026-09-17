@@ -1,0 +1,576 @@
+* {
+    box-sizing: border-box;
+}
+
+.heading {
+    margin-top: 10px;
+    text-align: center;
+}
+
+input {
+    height: 40px;
+    border-radius: 10px;
+    width: 200px;
+    padding: 8px 12px;
+    border: 1px solid #aaa;
+    outline: none;
+}
+
+input:focus {
+    border-color: #198754;
+}
+
+/* ADD / SEARCH / FILTER */
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.addExp {
+    border: 1px solid rgb(102, 101, 101);
+    border-radius: 10px;
+    box-shadow: 5px 5px 12px 3px black;
+    width: 35%;
+    padding: 20px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.addExp h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.addInput {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .addInput input {
+    width: 200px;
+} */
+
+.addInput button {
+    /* height: 40px; */
+    margin-bottom: auto;
+    /* white-space: nowrap; */
+}
+
+button {
+    /* height: fit-content; */
+}
+
+/* EXPENSE LIST HEADING */
+.listHeading {
+    background-color: aliceblue;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.listHeading h1 {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
+
+#total {
+    background-color: rgba(250, 235, 215, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+    white-space: nowrap;
+}
+
+#total:hover {
+    transform: scale(1.05);
+}
+
+#head {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.1s ease;
+}
+
+#head:hover {
+    transform: scale(1.02);
+}
+
+/* EXPENSE CARDS */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 0 25px;
+}
+
+.cardBody {
+    background-color: rgba(218, 199, 175, 0.5);
+    width: 100%;
+    min-height: 180px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardBody h3 {
+    overflow-wrap: anywhere;
+}
+
+.cardBody:hover {
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.6);
+}
+
+.expBtn {
+    width: 95px;
+    margin: 10px 5px;
+}
+
+/* EDIT */
+.editContainer {
+    width: 100%;
+    min-height: 150px;
+}
+
+.editInput {
+    margin: 5px auto;
+    display: block;
+    width: 100%;
+}
+
+/* LOADING */
+.load {
+    border: 2px solid #ddd;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* TABLET 769px - 1100px */
+@media (max-width: 1100px) {
+    .search {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .addExp {
+        width: 45%;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .exp {
+        display: flex;
+        /* flex-direction: column; */
+        /* gap: 5px;
+        margin: 0px;
+        padding: 0px; */
+        flex-wrap: wrap;
+    }
+
+    .exp .add {
+        /* margin-top: -40px; */
+    }
+}
+
+/* SMALL TABLET 481px - 768px */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 32px;
+    }
+
+    .search {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    .addExp {
+        width: 100%;
+        max-width: 600px;
+        margin-top: 15px;
+    }
+
+    .addInput {
+        width: 100%;
+    }
+
+    .addInput input {
+        flex: 1;
+        width: auto;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .cardBody {
+        padding: 20px 10px;
+    }
+
+    .listHeading {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .listHeading h1 {
+        width: 100%;
+    }
+
+    #total {
+        margin: 5px auto;
+    }
+}
+
+/* MOBILE 480px AND BELOW */
+@media (max-width: 480px) {
+    .heading {
+        font-size: 28px;
+        margin-top: 15px;
+    }
+
+    /* Add/Search/Filter boxes */
+    .search {
+        width: 100%;
+        padding: 0 10px;
+        gap: 10px;
+    }
+
+    .addExp {
+        width: 100%;
+        padding: 15px;
+        margin-top: 10px;
+        box-shadow: 3px 3px 8px 2px black;
+    }
+
+    .addExp h3 {
+        font-size: 21px;
+        margin-bottom: 12px;
+    }
+
+    .addInput {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .addInput input {
+        width: 100%;
+        height: 42px;
+    }
+
+    .addInput button {
+        width: 100%;
+        min-height: 40px;
+    }
+
+    /* Expense list heading */
+    .listHeading {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    .listHeading h1 {
+        font-size: 25px;
+    }
+
+    #total {
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+        white-space: normal;
+    }
+
+    /* Expense cards */
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .cardBody {
+        width: 100%;
+        min-height: 170px;
+        padding: 20px 10px;
+    }
+
+    .cardBody h3 {
+        font-size: 22px;
+    }
+
+    .cardBody h6 {
+        font-size: 16px;
+    }
+
+    /* Buttons */
+    .expBtn {
+        width: 55%;
+        margin: 5px 2px;
+    }
+
+    /* Edit inputs */
+    .editContainer {
+        width: 100%;
+    }
+
+    .editInput {
+        width: 100%;
+        height: 40px;
+    }
+}
+
+/* VERY SMALL MOBILE 360px AND BELOW */
+@media (max-width: 360px) {
+    .heading {
+        font-size: 25px;
+    }
+
+    .addExp {
+        padding: 12px;
+    }
+
+    .addExp h3 {
+        font-size: 19px;
+    }
+
+    .listHeading h1 {
+        font-size: 22px;
+    }
+
+    .cardBody {
+        padding: 15px 8px;
+    }
+
+    .expBtn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #eaa7a7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #797878;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d9f0a7;
+}
+
+
+
+
+
+/* My CSS */
+/* .heading {
+    margin-top: 10px;
+}
+
+input {
+    height: 40px;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.addInput {
+    display: flex;
+    gap: 10px;
+}
+
+.addExp {
+    border: 1px solid rgb(102, 101, 101);
+    border-radius: 10px;
+    box-shadow: 5px 5px 12px 3px black;
+    width: fit-content;
+    padding: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    padding-bottom: 0px;
+}
+
+.addExp h3 {
+    text-align: center;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    height: fit-content;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+} */
+
+/* .cardBody {
+    background-color: rgba(218, 199, 175, 0.5);
+    width: 300px; */
+/* height: 200px; */
+/* margin: 5px;
+    margin-left: 35px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+} */
+
+/* .cardBody:hover { */
+/* box-shadow: 6px 7px 10px black,-2px -3px 10px black; */
+/* box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.6);
+} */
+
+/* .expBtn {
+    width: 95px;
+    margin: 10px;
+}
+
+.editContainer {
+    height: 120px;
+}
+
+.editInput {
+    margin: 5px auto;
+}
+
+.listHeading {
+    background-color: aliceblue;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 5px;
+    display: flex;
+    align-items: center; */
+/* gap: 500px; */
+/* } */
+
+/* .listHeading h1 {
+    flex: 1;
+    text-align: center;
+
+}
+
+#total {
+    background-color: rgba(250, 235, 215, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+#total:hover {
+    transform: scale(1.05);
+}
+
+#head {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.1s ease;
+}
+
+#head:hover {
+    transform: scale(1.02);
+}
+
+.load { */
+/* border-top: 1px solid black; */
+/* border: 2px solid #ddd;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+} */
+
+/* Width of scrollbar */
+/* ::-webkit-scrollbar {
+    width: 8px;
+} */
+
+/* Background of scrollbar */
+/* ::-webkit-scrollbar-track {
+    background: #eaa7a7;
+} */
+
+/* Moving part */
+/* ::-webkit-scrollbar-thumb {
+    background: #797878;
+    border-radius: 10px;
+} */
+
+/* When hovering */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #d9f0a7;
+} */
+
+/* .card-container { width: 95%; margin: 0 auto 30px auto; display: flex; flex-direction: column; gap: 10px; } */
+/* .cardBody { width: 100%; min-height: 65px; margin: 0; padding: 10px 20px; background-color: rgba(218, 199, 175, 0.5); border-radius: 8px; display: flex; align-items: center; transition: all 0.2s ease; } */
+/* .cardBody > div:not(.editContainer) { width: 100%; display: flex; align-items: center; } */
+/* .cardBody h3 { width: 40%; margin: 0; text-align: left; font-size: 18px; } */
+/* .cardBody h6 { width: 25%; margin: 0; text-align: left; font-size: 16px; } */
+/* .expBtn { width: 95px; margin: 0 5px; } */
+/* .editContainer { width: 100%; min-height: 50px; display: flex; align-items: center; gap: 10px; } */
+/* .editInput { width: 25%; height: 40px; margin: 0; } */
+/* .listHeading { background-color: aliceblue; margin-top: 30px; margin-bottom: 30px; padding: 5px; display: flex; align-items: center; } */
+/* .listHeading h1 { flex: 1; text-align: center; } */
+/* #total { background-color: rgba(250, 235, 215, 0.8); padding: 10px; border-radius: 5px; margin: 5px; font-weight: bold; transition: transform 0.2s ease; } */
+/* #total:hover { transform: scale(1.05); } */
+/* #head { cursor: pointer; display: inline-block; transition: transform 0.1s ease; } */
+/* #head:hover { transform: scale(1.02); } */

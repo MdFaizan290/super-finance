@@ -1,14 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams,useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import './AddBudget.css'
+import { BASE_URL } from '../BackendUrl';
 function EditBudget() {
     const [category, setCategory] = useState("");
     const [amount, setAmount] = useState(null);
     const { id } = useParams();
     const navigate = useNavigate();
-    const ApiUrl = `http://localhost:5000/api/budgets`;
+    const ApiUrl = `${BASE_URL}/api/budgets`;
     const handleCategory = (e) => {
         // console.log(e.target.value);
         setCategory(e.target.value);
@@ -27,23 +28,23 @@ function EditBudget() {
     }, [])
 
     const updateBudget = async () => {
-        const updatedBdg = await axios.put(`${ApiUrl}/${id}`,{
+        const updatedBdg = await axios.put(`${ApiUrl}/${id}`, {
             category,
             amount
         });
-        navigate("/budgets/list");   
+        navigate("/budgets/list");
     }
 
     return (
-        <div>
-            <h1 className='text-center mt-5 mb-5'>Edit Budget</h1>
-            <div class="card budget-form" >
+        <div className='mb-5'>
+            {/* <h1 className='text-center mt-5 mb-5'>Edit Budget</h1> */}
+            <div class="card budget-form  mt-4" >
                 <div class="card-body form-body">
                     <h3 className="fs-3 mb-5">Edit Your Budget</h3>
-                    <input placeholder="Category" value={category} onChange={handleCategory} />
-                    <input placeholder="Amount" type="number" value={amount} onChange={handleAmount} />
+                    <input id="inp" placeholder="Category" value={category} onChange={handleCategory} />
+                    <input id="inp" placeholder="Amount" type="number" value={amount} onChange={handleAmount} />
                     {/* <Link to={"/budgets/list"}></Link> */}
-                    <button className="btn btn-success" onClick={updateBudget}>Update</button>
+                    <button className="btn btn-success add-budget-btn" onClick={updateBudget}>Update</button>
                 </div>
             </div>
         </div>

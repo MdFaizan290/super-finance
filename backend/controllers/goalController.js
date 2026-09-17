@@ -58,20 +58,20 @@ module.exports.editGoal = async (req, res) => {
     }
 }
 //update current amount
-module.exports.editSaving = async (req,res) => {
-    try{
-        const {id} = req.params;
-        const {currentAmount} = req.body;
+module.exports.editSaving = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { currentAmount } = req.body;
         const goal = await Goal.findById(id);
         const newAmt = goal.currentAmount + Number(currentAmount);
-        if(newAmt > goal.targetAmount){
-            return res.json({message:"Target Amount exceeded,"});
+        if (newAmt > goal.targetAmount) {
+            return res.json({ message: "Target Amount exceeded," });
         }
         goal.currentAmount = newAmt;
         await goal.save();
         res.json(goal);
-    }catch(err){
-        res.status(500).json({message:err});
+    } catch (err) {
+        res.status(500).json({ message: err });
     }
 }
 //Delete Goal

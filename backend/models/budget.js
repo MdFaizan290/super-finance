@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const budgetSchema = new mongoose.Schema({
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    },
     category: {
         type: String,
         required: true,
@@ -13,5 +17,5 @@ const budgetSchema = new mongoose.Schema({
     timestamps: true
 });
 
-const Budget = mongoose.model("Budget",budgetSchema);
+const Budget = mongoose.model("Budget", budgetSchema);
 module.exports = Budget;

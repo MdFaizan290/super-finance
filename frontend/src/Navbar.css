@@ -1,0 +1,205 @@
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+    padding: 12px 20px;
+    background-color: rgba(255, 255, 200, 1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Logo */
+.tagLink {
+    text-decoration: none;
+    margin-left: 30px;
+    flex-shrink: 0;
+}
+
+.tag {
+    color: blueviolet;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 0;
+    background-color: rgba(62, 181, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.tag:hover {
+    transform: scale(1.04);
+}
+
+/* Navigation items */
+.para {
+    margin: 0;
+    padding: 10px;
+    color: blueviolet;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.para:hover {
+    transform: scale(1.04);
+    font-weight: 600;
+    opacity: 1;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.s {
+    margin: -6px;
+    padding: 0;
+}
+/* Tablet */
+@media (max-width: 992px) {
+    .navContainer {
+        gap: 5px;
+        padding: 10px;
+    }
+    .tagLink {
+        margin-left: 10px;
+    }
+    .tag {
+        padding: 8px 12px;
+        font-size: 15px;
+    }
+    .para {
+        padding: 8px 6px;
+        font-size: 14px;
+    }
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+/* Mobile */
+@media (max-width: 768px) {
+    .navContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px;
+    }
+    /* Logo takes full row */
+    .tagLink {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .tag {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+    /* Navigation row */
+    .para {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+/* Small Mobile */
+@media (max-width: 480px) {
+    .navContainer {
+        justify-content: space-around;
+        /* overflow-x: auto; */
+        /* flex-wrap: wrap; */
+        gap: 3px;
+        padding: 8px;
+    }
+    /* Keep logo at top */
+    .tagLink {
+        width: auto;
+        flex-shrink: 0;
+        margin: 0 5px 0 0;
+    }
+    .tag {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    .para {
+        padding: 8px 7px;
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+    svg {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+
+
+/* My CSS */
+/* .navContainer {
+    display: flex;
+    padding: 15px;
+    background-color: rgba(255, 255, 200, 1);
+    position: sticky;
+    top: 0;
+    z-index: 10; */
+/* align-items: center; */
+/* } */
+
+/* .para {
+    margin: 0 auto;
+    padding: 10px;
+    color: blueviolet;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: transform 0.5s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.para:hover {
+    transform: scale(1.04);
+    font-weight: 600;
+    opacity: 1;
+}
+
+svg {
+    width: 20px;
+}
+
+.tag {
+    color: blueviolet;
+    font-weight: bold;
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-radius: 10px;
+    margin: 0px;
+    background-color: rgba(62, 181, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.tag:hover {
+    transform: scale(1.04);
+}
+
+.tagLink {
+    text-decoration: none;
+    margin-left: 70px; */
+/* margin-right: 50px; */
+/* }
+
+.s {
+    margin: -6px;
+    padding: 0px;
+} */

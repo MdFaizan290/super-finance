@@ -1,0 +1,323 @@
+/* ========================= MAIN PAGE ========================= */
+.goal-view-page {
+    width: 100%;
+    min-height: 80vh;
+    /* padding: 20px; */
+    box-sizing: border-box;
+}
+
+/* ========================= MAIN HEADING ========================= */
+.goal-view-heading {
+    text-align: center;
+    margin: 25px 0 40px;
+    font-size: 34px;
+    font-weight: 600;
+}
+
+/* ========================= GOAL CARD ========================= */
+.goal-view-card {
+    width: 40%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgb(240, 240, 173);
+    border-radius: 15px;
+    box-shadow: 10px 8px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Card hover */
+.goal-view-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================= CARD CONTENT ========================= */
+.goal-view-body {
+    width: 100%;
+}
+
+.goal-view-body h2 {
+    font-size: 27px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    word-break: break-word;
+}
+
+.goal-view-body h3 {
+    font-size: 21px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.goal-view-body p {
+    font-size: 13px;
+    margin-top: 15px;
+    color: #555;
+    line-height: 1.5;
+    /* word-break: break-word; */
+}
+
+/* ADD SAVING BUTTON */
+.add-saving-btn {
+    width: 180px;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* SAVING INPUT */
+.saving-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.saving-input {
+    width: 250px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 11px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+.saving-input:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.12);
+}
+
+/* ========================= PROGRESS HEADING ========================= */
+.progress-heading {
+    text-align: center;
+    margin: 55px 0 30px;
+    font-size: 30px;
+}
+
+/* ========================= PROGRESS BAR ========================= */
+.goal-progress {
+    width: 70%;
+    max-width: 1000px;
+    height: 20px;
+    margin: 0 auto;
+    background: grey;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: green;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+/* ========================= PROGRESS PERCENTAGE ========================= */
+.progress-percentage {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* ========================= COMPLETED ========================= */
+.goal-completed {
+    text-align: center;
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+}
+
+/* ========================= TABLET ========================= */
+@media (max-width: 992px) {
+    .goal-view-page {
+        padding: 20px 15px;
+    }
+
+    .goal-view-heading {
+        font-size: 30px;
+        margin-bottom: 35px;
+    }
+
+    .goal-view-card {
+        width: 65%;
+        padding: 25px;
+    }
+
+    .goal-progress {
+        width: 80%;
+    }
+}
+
+/* ========================= MOBILE ========================= */
+@media (max-width: 768px) {
+    .goal-view-page {
+        padding: 15px;
+    }
+
+    .goal-view-heading {
+        font-size: 27px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .goal-view-card {
+        width: 85%;
+        padding: 22px;
+        border-radius: 13px;
+    }
+
+    .goal-view-body h2 {
+        font-size: 24px;
+    }
+
+    .goal-view-body h3 {
+        font-size: 19px;
+    }
+
+    .goal-progress {
+        width: 85%;
+        height: 18px;
+    }
+
+    .progress-heading {
+        font-size: 25px;
+        margin-top: 45px;
+    }
+}
+
+/* ========================= SMALL MOBILE ========================= */
+@media (max-width: 480px) {
+    .goal-view-page {
+        padding: 10px;
+    }
+
+    .goal-view-heading {
+        font-size: 24px;
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    .goal-view-card {
+        width: 95%;
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .goal-view-body h2 {
+        font-size: 21px;
+        margin-bottom: 12px;
+    }
+
+    .goal-view-body h3 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .goal-view-body p {
+        font-size: 12px;
+        margin-top: 12px;
+    }
+
+    /* Saving input */
+    .saving-input {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .saving-input-container {
+        width: 100%;
+    }
+
+    .saving-input-container button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .add-saving-btn {
+        width: 100%;
+        padding: 11px;
+    }
+
+    /* Progress */
+    .progress-heading {
+        font-size: 22px;
+        margin-top: 40px;
+        margin-bottom: 25px;
+    }
+
+    .goal-progress {
+        width: 95%;
+        height: 17px;
+    }
+
+    .progress-percentage {
+        font-size: 14px;
+    }
+}
+
+/* ========================= VERY SMALL MOBILE ========================= */
+@media (max-width: 360px) {
+    .goal-view-heading {
+        font-size: 22px;
+    }
+
+    .goal-view-card {
+        width: 98%;
+        padding: 18px 12px;
+    }
+
+    .goal-view-body h2 {
+        font-size: 20px;
+    }
+
+    .goal-view-body h3 {
+        font-size: 16px;
+    }
+
+    .goal-view-body p {
+        font-size: 11px;
+    }
+
+    .progress-heading {
+        font-size: 20px;
+    }
+
+    .goal-progress {
+        width: 98%;
+    }
+}
+
+
+
+
+/* My CSS */
+/* .progress {
+    height: 20px;
+    background: grey;
+    border-radius: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: green;
+    border-radius: 10px;
+}
+
+.cd { 
+    width: 40%;
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: rgb(240, 240, 173);
+    width: 40%;
+    box-shadow: 10px 8px 8px rgba(0, 0, 0, 0.15);
+}   */
