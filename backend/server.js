@@ -43,7 +43,7 @@ app.use("/api/budgets", budgetRoute);
 app.use("/api/goals", goalRoute);
 app.use("/api/expense", expenseRoute);
 
-app.listen(Port, () => {
+app.listen(Port,"0.0.0.0", () => {
     console.log(`Server Running On Port ${Port}...`);
     connectDB();
 })
