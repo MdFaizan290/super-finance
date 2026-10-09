@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./list.css";
 import { BASE_URL } from "../BackendUrl";
 
@@ -9,8 +9,18 @@ function GoalList() {
     const [loading, setLoading] = useState(true);
     const ApiUrl = `${BASE_URL}/api/goals`;
     const randomNumber = Math.floor(Math.random() * 5000) + 200;
+
+    const navigate = useNavigate();
     const fetchGoal = async () => {
-        const allGoal = await axios.get(ApiUrl);
+        const token = localStorage.getItem("token");
+        if (!token) {
+            return;
+        }
+        const allGoal = await axios.get(ApiUrl, {
+            headers: {
+                Authorization: token
+            }
+        });
         setGoals(allGoal.data);
     };
     useEffect(() => {
@@ -24,13 +34,22 @@ function GoalList() {
     }, []);
 
     const deleteGoal = async (id) => {
-        const dltGoal = await axios.delete(`${ApiUrl}/${id}`);
+        const token = localStorage.getItem("token");
+        if (!token) {
+            return;
+        }
+        const dltGoal = await axios.delete(`${ApiUrl}/${id}`, {
+            headers: {
+                Authorization: token
+            }
+        });
         // console.log(dltGoal.data.dltGoal);
         fetchGoal();
     };
 
+    const token = localStorage.getItem("token");
     return (
-        <div className="goal-page">
+        token ? (<div className="goal-page">
             {/* Header */}
             <div className="goal-header">
                 <h1>Goal List</h1>
@@ -94,7 +113,81 @@ function GoalList() {
                     <Link to="/goals/new" className="btn btn-primary"><i className="fa-solid fa-plus"></i>{" "}Add Goal</Link>
                 </div>
             )}
-        </div>
+        </div>) : (
+            <div className="goalGuest mt-5">
+                <div className="goalGuestCard">
+
+                    <div className="goalGuestIcon">
+                        <i className="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <h3>Turn Your Dreams Into Goals 🎯</h3>
+
+                    <p className="goalGuestDescription">
+                        Set clear savings goals, track your progress, and stay motivated
+                        to achieve the things that matter most with <strong>Super Finance</strong>.
+                    </p>
+
+                    <div className="goalFeatures">
+
+                        <div className="goalFeature">
+                            <div className="goalFeatureIcon">🎯</div>
+                            <div>
+                                <h5>Set Your Goals</h5>
+                                <p>
+                                    Create savings goals for the things you want to achieve.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="goalFeature">
+                            <div className="goalFeatureIcon">💰</div>
+                            <div>
+                                <h5>Save With Purpose</h5>
+                                <p>
+                                    Decide how much you want to save and stay focused on your target.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="goalFeature">
+                            <div className="goalFeatureIcon">📈</div>
+                            <div>
+                                <h5>Track Your Progress</h5>
+                                <p>
+                                    See how close you are to reaching each of your financial goals.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="goalFeature">
+                            <div className="goalFeatureIcon">🏆</div>
+                            <div>
+                                <h5>Celebrate Your Success</h5>
+                                <p>
+                                    Stay motivated and enjoy the feeling of completing your goals.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className="goalGuestBottom">
+                        <h5>Have something you've always wanted to achieve?</h5>
+
+                        <p>
+                            Login to create your first savings goal.
+                        </p>
+
+                        <button onClick={() => navigate("/login")}>
+                            <i className="fa-solid fa-right-to-bracket"></i>
+                            Login to Continue
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        )
     );
 }
 

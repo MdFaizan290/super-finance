@@ -3,7 +3,7 @@ const Goal = require("../models/goal");
 //Show all Goals
 module.exports.showAll = async (req, res) => {
     try {
-        const goals = await Goal.find();
+        const goals = await Goal.find({ userId: req.user._id });
         res.json(goals);
     } catch (err) {
         res.status(500).json({ message: err });
@@ -14,11 +14,12 @@ module.exports.addGoal = async (req, res) => {
     try {
         const { title, targetAmount, currentAmount } = req.body;
         const addGoal = await Goal.create({
+            userId: req.user._id,
             title,
             targetAmount,
             currentAmount,
         });
-        res.json(addGoal);
+        res.status(200).json({ message: "Goal Added", addGoal });
     } catch (err) {
         res.status(500).json({ message: err });
     }
@@ -28,7 +29,7 @@ module.exports.addGoal = async (req, res) => {
 module.exports.showGoal = async (req, res) => {
     try {
         const { id } = req.params;
-        const goal = await Goal.findById(id);
+        const goal = await Goal.findOne({ _id: id, userId: req.user._id });
         if (!goal) {
             return res.json({ message: "No Goal Found" });
         }
@@ -42,7 +43,11 @@ module.exports.editGoal = async (req, res) => {
     try {
         const { id } = req.params;
         const { title, targetAmount, currentAmount } = req.body;
-        const newGoal = await Goal.findByIdAndUpdate(id,
+        const newGoal = await Goal.findOneAndUpdate(
+            {
+                _id: id,
+                userId: req.user._id
+            },
             {
                 title,
                 targetAmount,
@@ -52,6 +57,9 @@ module.exports.editGoal = async (req, res) => {
                 new: true
             }
         );
+        if (!newGoal) {
+            return res.status(404).json({ message: "Goal Not Found" });
+        }
         res.json(newGoal);
     } catch (err) {
         res.status(500).json({ message: err });
@@ -78,9 +86,9 @@ module.exports.editSaving = async (req, res) => {
 module.exports.deleteGoal = async (req, res) => {
     try {
         const id = req.params.id;
-        const dltGoal = await Goal.findByIdAndDelete(id);
+        const dltGoal = await Goal.findOneAndDelete({ _id: id, userId: req.user._id });
         if (!dltGoal) {
-            return res.json({ message: "No Goal To Delete/Already deleted" });
+            return res.json({ message: "No Goal To Delete" });
         }
         res.json({ message: "Goal Deleted Succesfully", dltGoal });
     } catch (err) {

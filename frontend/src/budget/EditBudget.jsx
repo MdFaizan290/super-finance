@@ -19,7 +19,17 @@ function EditBudget() {
         // console.log(e.target.value);
     }
     const fetchBudget = async () => {
-        const budget = await axios.get(`${ApiUrl}/${id}`);
+        const token = localStorage.getItem("token");
+        if (!token) {
+            return;
+        }
+        const budget = await axios.get(`${ApiUrl}/${id}`,
+            {
+                headers: {
+                    Authorization: token
+                }
+            }
+        );
         setCategory(budget.data.category);
         setAmount(budget.data.amount);
     }
@@ -28,18 +38,29 @@ function EditBudget() {
     }, [])
 
     const updateBudget = async () => {
-        const updatedBdg = await axios.put(`${ApiUrl}/${id}`, {
-            category,
-            amount
-        });
+        const token = localStorage.getItem("token");
+        if (!token) {
+            return;
+        }
+        const updatedBdg = await axios.put(`${ApiUrl}/${id}`,
+            {
+                category,
+                amount
+            },
+            {
+                headers: {
+                    Authorization: token
+                }
+            }
+        );
         navigate("/budgets/list");
     }
 
     return (
         <div className='mb-5'>
             {/* <h1 className='text-center mt-5 mb-5'>Edit Budget</h1> */}
-            <div class="card budget-form  mt-4" >
-                <div class="card-body form-body">
+            <div className="card budget-form  mt-4" >
+                <div className="card-body form-body">
                     <h3 className="fs-3 mb-5">Edit Your Budget</h3>
                     <input id="inp" placeholder="Category" value={category} onChange={handleCategory} />
                     <input id="inp" placeholder="Amount" type="number" value={amount} onChange={handleAmount} />

@@ -1,0 +1,340 @@
+/* ==============================
+   REGISTER PAGE
+================================ */
+
+.registerPage {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        135deg,
+        rgb(255, 255, 210),
+        rgb(240, 225, 255)
+    );
+}
+
+
+/* ==============================
+   REGISTER CARD
+================================ */
+
+.registerCard {
+    width: 420px;
+    max-width: 100%;
+
+    padding: 35px 38px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+
+    box-sizing: border-box;
+}
+
+
+/* ==============================
+   LOGO
+================================ */
+
+.registerLogo {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.logoIcon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+
+    background: rgba(62, 181, 255, 0.18);
+
+    color: blueviolet;
+
+    font-size: 25px;
+}
+
+.registerLogo h2 {
+    margin: 0;
+
+    color: blueviolet;
+    font-size: 25px;
+}
+
+.registerLogo h2 span {
+    color: #7b2cbf;
+}
+
+.registerLogo p {
+    margin-top: 7px;
+    margin-bottom: 0;
+
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* ==============================
+   INPUT
+================================ */
+
+.inputGroup {
+    margin-bottom: 18px;
+}
+
+.inputGroup label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #333;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.inputBox {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    background-color: #fafafa;
+
+    transition: 0.2s;
+
+    box-sizing: border-box;
+}
+
+.inputBox:focus-within {
+    border-color: blueviolet;
+
+    box-shadow:
+        0 0 0 3px rgba(138, 43, 226, 0.1);
+
+    background-color: white;
+}
+
+.inputBox > i:first-child {
+    margin-left: 14px;
+
+    color: #888;
+
+    font-size: 15px;
+}
+
+.inputBox input {
+    width: 100%;
+
+    padding: 12px 10px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+
+    box-sizing: border-box;
+}
+
+.inputBox input::placeholder {
+    color: #aaa;
+}
+
+
+/* Password eye */
+
+.passwordIcon {
+    margin-right: 14px;
+
+    color: #888;
+
+    cursor: pointer;
+}
+
+.passwordIcon:hover {
+    color: blueviolet;
+}
+
+
+/* ==============================
+   CHECKBOXES
+================================ */
+
+.checkRow {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin: 13px 0;
+
+    color: #555;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    cursor: pointer;
+}
+
+.checkRow input {
+    width: 16px;
+    height: 16px;
+
+    margin-top: 2px;
+
+    flex-shrink: 0;
+
+    accent-color: blueviolet;
+
+    cursor: pointer;
+}
+
+.checkRow strong {
+    color: #333;
+}
+
+.checkRow a {
+    color: blueviolet;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.checkRow a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   REGISTER BUTTON
+================================ */
+
+.registerBtn {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: blueviolet;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.registerBtn:hover {
+    background: #7225a8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 15px rgba(138, 43, 226, 0.25);
+}
+
+.registerBtn:active {
+    transform: translateY(0);
+}
+
+
+/* ==============================
+   LOGIN
+================================ */
+
+.loginText {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+.loginText a {
+    color: blueviolet;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.loginText a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width: 480px) {
+
+    .registerPage {
+        padding: 20px 12px;
+    }
+
+    .registerCard {
+        padding: 28px 22px;
+
+        border-radius: 16px;
+    }
+
+    .registerLogo h2 {
+        font-size: 22px;
+    }
+
+    .logoIcon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .inputGroup {
+        margin-bottom: 15px;
+    }
+
+    .checkRow {
+        font-size: 12px;
+    }
+
+    .registerBtn {
+        padding: 12px;
+    }
+}

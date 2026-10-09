@@ -2,7 +2,7 @@ const Expense = require("../models/expense");
 
 const getAllExpense = async (req, res) => {
     try {
-        const allExp = await Expense.find();
+        const allExp = await Expense.find({ userId: req.user._id });
         res.json(allExp);
     } catch (err) {
         res.status(500).json({ message: err });
@@ -13,6 +13,7 @@ const addExpense = async (req, res) => {
     try {
         const { title, expenseAmt } = req.body;
         const exp = await Expense.create({
+            userId: req.user._id,
             title,
             expenseAmt
         });
@@ -26,7 +27,11 @@ const editExpense = async (req, res) => {
     try {
         const { id } = req.params;
         const { title, expenseAmt } = req.body;
-        const newExp = await Expense.findByIdAndUpdate(id,
+        const newExp = await Expense.findOneAndUpdate(
+            {
+                _id: id,
+                userId: req.user._id
+            },
             {
                 title,
                 expenseAmt
@@ -36,6 +41,9 @@ const editExpense = async (req, res) => {
                 new: true
             }
         );
+        if (!newExp) {
+            return res.status(404).json({ message: "Expense Not Found" });
+        }
         res.json(newExp);
     } catch (err) {
         res.status(500).json({ message: err });
@@ -45,10 +53,11 @@ const editExpense = async (req, res) => {
 const dltExpense = async (req, res) => {
     try {
         const { id } = req.params;
-        const dltExp = await Expense.findByIdAndDelete(id);
+        const dltExp = await Expense.findOneAndDelete({ _id: id, userId: req.user._id });
         if (!dltExp) {
-            return res.json({ message: "No Expense To Delete" })
+            return res.json({ message: "Expense Not Found" });
         }
+
         res.json({ message: "Expense Deleted SuccessFully", dltExp });
     } catch (err) {
         res.status(500).json({ message: err });

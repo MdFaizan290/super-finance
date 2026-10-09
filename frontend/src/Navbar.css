@@ -3,13 +3,16 @@
     align-items: center;
     justify-content: space-around;
     gap: 15px;
-    padding: 12px 20px;
-    background-color: rgba(255, 255, 200, 1);
+    padding: 18px 20px;
+    background-color: #F4EFFF;
+    /* background: linear-gradient(to bottom, #f0eaff,#d5e7fc); */
     position: sticky;
     top: 0;
     z-index: 10;
     width: 100%;
     box-sizing: border-box;
+    border-bottom: 1px solid #e5dba8;
+
 }
 
 /* Logo */
@@ -65,28 +68,114 @@ svg {
     margin: -6px;
     padding: 0;
 }
+
+#profile {
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+#profile img {
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    object-fit: cover;
+    margin-right: -2rem;
+}
+
+
+/* Profile dropdown */
+/* .profileContainer {
+    position: fixed;
+    top: 70px;
+    right: 30px;
+    width: 180px;
+    padding: 10px 0;
+    background-color: aliceblue;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+} */
+
+.profileContainer {
+    position: fixed;
+    top: 70px;
+    right: 30px;
+    width: 180px;
+    padding: 10px 0;
+    background-color: rgba(219, 220, 221,1);
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Arrow */
+.profileContainer::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(219, 220, 221,1);
+}
+
+/* Dropdown items */
+.profileContainer p {
+    margin: 0;
+    padding: 12px 18px;
+    line-height: normal;
+    color: #333;
+    cursor: pointer;
+    border-bottom: 1px solid silver;
+}
+
+.profileContainer p:hover {
+    background-color: rgba(137, 43, 226, 0.1);
+    color: blueviolet;
+}
+
 /* Tablet */
 @media (max-width: 992px) {
     .navContainer {
         gap: 5px;
         padding: 10px;
     }
+
     .tagLink {
         margin-left: 10px;
     }
+
     .tag {
         padding: 8px 12px;
         font-size: 15px;
     }
+
     .para {
         padding: 8px 6px;
         font-size: 14px;
     }
+
     svg {
         width: 18px;
         height: 18px;
     }
+
+    #profile img {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0;
+    }
+
+    .profileContainer {
+        top: 60px;
+        right: 15px;
+    }
 }
+
 /* Mobile */
 @media (max-width: 768px) {
     .navContainer {
@@ -95,6 +184,7 @@ svg {
         gap: 5px;
         padding: 10px;
     }
+
     /* Logo takes full row */
     .tagLink {
         width: 100%;
@@ -102,16 +192,23 @@ svg {
         display: flex;
         justify-content: center;
     }
+
     .tag {
         font-size: 16px;
         padding: 8px 15px;
     }
+
     /* Navigation row */
     .para {
         padding: 8px 10px;
         font-size: 14px;
     }
+    .profileContainer {
+        top: 105px;
+        right: 15px;
+    }
 }
+
 /* Small Mobile */
 @media (max-width: 480px) {
     .navContainer {
@@ -121,24 +218,38 @@ svg {
         gap: 3px;
         padding: 8px;
     }
+
     /* Keep logo at top */
     .tagLink {
         width: auto;
         flex-shrink: 0;
         margin: 0 5px 0 0;
     }
+
     .tag {
         font-size: 14px;
         padding: 8px 10px;
     }
+
     .para {
         padding: 8px 7px;
         font-size: 13px;
         flex-shrink: 0;
     }
+
     svg {
         width: 17px;
         height: 17px;
+    }
+    #profile img {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+
+    .profileContainer {
+        top: 55px;
+        right: 10px;
+        width: 160px;
     }
 }
 

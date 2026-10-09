@@ -117,6 +117,262 @@
     animation: loading 1s linear infinite;
 }
 
+
+
+/* Logout view */
+.budgetGuest {
+    width: 90%;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+
+.budgetGuestCard {
+    background: rgba(255, 255, 255, 0.5);;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 25px;
+    padding: 45px;
+
+    text-align: center;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+/* Main Icon */
+
+.budgetGuestIcon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff1a8;
+    border-radius: 20px;
+
+    font-size: 32px;
+    color: rgb(173, 93, 247);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.budgetGuestCard h3 {
+    font-size: 30px;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+    color: #222;
+}
+
+.budgetGuestDescription {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #666;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.budgetGuestDescription strong {
+    color: rgb(92, 2, 176);
+}
+
+/* Features */
+
+.budgetFeatures {
+    margin-top: 35px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+    text-align: left;
+}
+
+.budgetFeature {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background: #fffdf0;
+
+    border: 1px solid #f0e7a5;
+
+    border-radius: 16px;
+
+    transition: all 0.25s ease;
+}
+
+.budgetFeature:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Feature Icon */
+
+.budgetFeatureIcon {
+    min-width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff1a8;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+}
+
+.budgetFeature h5 {
+    margin: 0 0 6px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #222;
+}
+
+.budgetFeature p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+/* Bottom Section */
+
+.budgetGuestBottom {
+    margin-top: 35px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #eee;
+}
+
+.budgetGuestBottom h5 {
+    margin-bottom: 5px;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    color: #222;
+}
+
+.budgetGuestBottom p {
+    color: #777;
+
+    margin-bottom: 18px;
+}
+
+/* Login Button */
+
+.budgetGuestBottom button {
+    border: none;
+
+    background: #222;
+    color: white;
+
+    padding: 12px 24px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.budgetGuestBottom button i {
+    margin-right: 8px;
+}
+
+.budgetGuestBottom button:hover {
+    transform: translateY(-2px);
+
+    background: #000;
+
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* Tablet / Mobile */
+
+@media (max-width: 700px) {
+
+    .budgetGuest {
+        width: 94%;
+    }
+
+    .budgetGuestCard {
+        padding: 30px 20px;
+
+        border-radius: 20px;
+    }
+
+    .budgetGuestCard h3 {
+        font-size: 24px;
+    }
+
+    .budgetGuestDescription {
+        font-size: 14px;
+    }
+
+    .budgetFeatures {
+        grid-template-columns: 1fr;
+    }
+
+    .budgetFeature {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .budgetGuestCard {
+        padding: 25px 15px;
+    }
+
+    .budgetGuestIcon {
+        width: 65px;
+        height: 65px;
+
+        font-size: 27px;
+    }
+
+    .budgetGuestCard h3 {
+        font-size: 21px;
+    }
+
+    .budgetGuestBottom h5 {
+        font-size: 17px;
+    }
+
+    .budgetGuestBottom button {
+        width: 100%;
+    }
+}
+
+
+
 @keyframes loading {
     from {
         transform: rotate(0deg);

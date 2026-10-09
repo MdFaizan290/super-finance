@@ -20,7 +20,15 @@ function EditGoal() {
     }
 
     const fetchGoal = async () => {
-        const goal = await axios.get(`${ApiUrl}/${id}`);
+        const token = localStorage.getItem("token");
+        if (!token) {
+            return;
+        }
+        const goal = await axios.get(`${ApiUrl}/${id}`, {
+            headers: {
+                Authorization: token
+            }
+        });
         setTitle(goal.data.title);
         setTargetAmount(goal.data.targetAmount);
     }
@@ -29,10 +37,21 @@ function EditGoal() {
     }, [])
 
     const updateGoal = async () => {
-        const updatedGoal = await axios.put(`${ApiUrl}/${id}`, {
-            title,
-            targetAmount
-        });
+        const token = localStorage.getItem("token");
+        if (!token) {
+            return;
+        }
+        const updatedGoal = await axios.put(`${ApiUrl}/${id}`,
+            {
+                title,
+                targetAmount
+            },
+            {
+                headers: {
+                    Authorization: token
+                }
+            }
+        );
         navigate("/goals/list");
     }
 

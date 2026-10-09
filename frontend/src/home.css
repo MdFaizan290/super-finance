@@ -70,8 +70,377 @@
     font-size: large;
 }
 
+/* Logout View */
+
+/* Landingpage */
+.landingPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin: 3rem;
+}
+
+.landingPage img {
+    width: 55%;
+}
+
+.landingPage .left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+}
+
+.landingPage .right {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+}
+
+.landingPage .p {
+    font-size: large;
+    width: 30%;
+}
+
+.left .about {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    width: 30%;
+}
+
+.left .about p {
+    padding: 40px;
+}
+
+
+
+/* Guest */
+.homeGuest {
+    width: 90%;
+    max-width: 1050px;
+    margin: 60px auto;
+    padding-bottom: 50px;
+}
+
+.homeGuestCard {
+    position: relative;
+    background: rgba(255, 255, 255, 0.68);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 28px;
+    padding: 55px 50px;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.09);
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+    transition: transform 0.15s ease-out;
+    transform-style: preserve-3d;
+}
+
+/* Decorative circles */
+.homeGuestCard::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: #fff4a8;
+    border-radius: 50%;
+    top: -110px;
+    left: -110px;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.homeGuestCard::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: #fff4a8;
+    border-radius: 50%;
+    bottom: -90px;
+    right: -90px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Keep content above decoration */
+.homeGuestCard>* {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* Main Icon */
+.homeGuestIcon {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 241, 168, 1);
+    border-radius: 24px;
+    font-size: 36px;
+    color: rgb(173, 93, 247);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Badge */
+.homeGuestBadge {
+    display: inline-block;
+    padding: 7px 16px;
+    margin-bottom: 15px;
+    background: #fff8cf;
+    border: 1px solid #f0e7a5;
+    border-radius: 30px;
+    color: #665d22;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Heading */
+.homeGuestCard h1 {
+    max-width: 750px;
+    margin: 0 auto 18px;
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #222;
+}
+
+.homeGuestCard h1 span {
+    color: #b39b00;
+}
+
+/* Description */
+.homeGuestDescription {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.homeGuestDescription strong {
+    color: rgb(147, 37, 250);
+}
+
+/* Features */
+.homeFeatures {
+    max-width: 850px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    text-align: left;
+}
+
+.homeFeature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #fffdf0;
+    border: 1px solid #f0e7a5;
+    border-radius: 17px;
+    transition: all 0.25s ease;
+}
+
+.homeFeature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.homeFeatureIcon {
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1a8;
+    border-radius: 13px;
+    font-size: 20px;
+    color: #333;
+}
+
+.homeFeature h5 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+}
+
+.homeFeature p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Bottom CTA */
+.homeGuestBottom {
+    margin-top: 42px;
+    padding-top: 32px;
+    border-top: 1px solid #eee;
+}
+
+.homeGuestBottom h3 {
+    margin-bottom: 7px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+}
+
+.homeGuestBottom p {
+    margin-bottom: 20px;
+    color: #777;
+    font-size: 15px;
+}
+
+/* Buttons */
+.homeGuestButtons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.homeGuestButtons button {
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.homeGuestButtons i {
+    margin-right: 8px;
+}
+
+.homeLoginBtn {
+    border: none;
+    background: #222;
+    color: white;
+}
+
+.homeRegisterBtn {
+    background: white;
+    border: 1px solid #222;
+    color: #222;
+}
+
+.homeLoginBtn:hover,
+.homeRegisterBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.homeLoginBtn:hover {
+    background: #000;
+}
+
+.homeRegisterBtn:hover {
+    background: #fff8cf;
+}
+
+
+
+
+/* Falling coins */
+.fallingCoins {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.fallingCoins span {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #fff9b5, #f2d94e);
+    border: 2px solid #c9aa18;
+    color: #806d00;
+    font-size: 15px;
+    font-weight: 800;
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.15),
+        inset 0 2px 3px rgba(255, 255, 255, 0.8);
+
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 0.9;
+}
+
+.fallingCoins span:nth-child(1) {
+    top: 8%;
+    left: 8%;
+}
+
+.fallingCoins span:nth-child(2) {
+    top: 18%;
+    right: 12%;
+}
+
+.fallingCoins span:nth-child(3) {
+    top: 35%;
+    left: 4%;
+}
+
+.fallingCoins span:nth-child(4) {
+    top: 45%;
+    right: 5%;
+}
+
+.fallingCoins span:nth-child(5) {
+    top: 71%;
+    left: 8%;
+}
+
+.fallingCoins span:nth-child(6) {
+    top: 70%;
+    right: 12%;
+}
+
+.fallingCoins span:nth-child(7) {
+    top: 82%;
+    left: 25%;
+}
+
+.fallingCoins span:nth-child(8) {
+    top: 4%;
+    left: 48%;
+}
+
+.fallingCoins span:nth-child(10) {
+    top: 96.4%;
+    left: 32%;
+}
+
+/* content above coins */
+.homeGuestCard>*:not(.fallingCoins) {
+    position: relative;
+    z-index: 3;
+}
+
+.homeGuestCard .fallingCoins {
+    position: absolute;
+    z-index: 2;
+}
+
+
+
 /* Tablet */
-@media (max-width: 992px) {
+@media (max-width:880px) {
     .dashboard {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -81,10 +450,72 @@
         grid-template-columns: 1fr;
         gap: 20px;
     }
+
+    .landingPage img {
+        width: 100%;
+    }
+
+    .landingPage .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgb(223, 192, 252);
+        border-radius: 1rem;
+    }
+
+    .landingPage .right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgb(223, 192, 252);
+        border-radius: 1rem;
+    }
+
+    .landingPage .p {
+        padding: 10px;
+        font-size: large;
+        width: 100%;
+    }
+
+    .left .about {
+        display: flex;
+        flex-direction: column;
+        font-size: large;
+        width: 100%;
+        /* margin: 0rem !important; */
+    }
+
+    .left .about p {
+        padding: 10px;
+    }
+
+
+    .homeGuest {
+        width: 94%;
+        margin-top: 40px;
+    }
+
+    .homeGuestCard {
+        padding: 40px 25px;
+        border-radius: 22px;
+    }
+
+    .homeGuestCard h1 {
+        font-size: 32px;
+    }
+
+    .homeGuestDescription {
+        font-size: 15px;
+    }
+
+    .homeFeatures {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Mobile */
-@media (max-width: 576px) {
+
+@media (max-width: 520px) {
     .dashboard {
         width: 92%;
         grid-template-columns: 1fr;
@@ -99,80 +530,95 @@
     .chartContainer {
         width: 92%;
         grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .expenseChart,
     .pieChart {
+        width: 100%;
+        min-width: 0;
         margin: 10px 0;
-        padding: 5px;
+        padding: 8px;
     }
 
-    .expenseChart h2,
-    .pieChart h2 {
-        font-size: 16px;
+    /* Landing page */
+    .landingPage {
+        width: 92%;
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 0;
+        gap: 2rem;
+    }
+
+    .landingPage img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .landingPage .left,
+    .landingPage .right {
+        width: 100%;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .landingPage .p,
+    .left .about {
+        width: 100%;
+        max-width: 100%;
+        font-size: medium;
+        box-sizing: border-box;
+    }
+
+    .left .about p {
+        padding: 10px;
+    }
+
+    /* Guest home page */
+    .homeGuest {
+        width: 95%;
+        margin: 25px auto;
+        padding-bottom: 30px;
+        box-sizing: border-box;
+    }
+
+    .homeGuestCard {
+        padding: 30px 16px;
+        border-radius: 20px;
+        box-sizing: border-box;
+    }
+
+    .homeGuestCard h1 {
+        font-size: clamp(22px, 6vw, 25px);
+    }
+
+    .homeGuestDescription {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .homeFeatures {
+        grid-template-columns: 1fr;
+    }
+
+    .homeFeature {
+        padding: 16px;
+    }
+
+    .homeGuestBottom h3 {
+        font-size: 19px;
+    }
+
+    .homeGuestButtons {
+        flex-direction: column;
+    }
+
+    .homeGuestButtons button {
+        width: 100%;
+        box-sizing: border-box;
     }
 }
-
-
-
-
-/* My CSS
-.dashboard {
-    display: flex;
-    margin-left: 57px;
-    gap: 68px;
-
-}
-
-.box {
-    background-color: rgba(249, 225, 196, 0.7);
-    width: 20.4%;
-    height: 200px;
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    color: blueviolet;
-    font-weight: 600;
-    font-size: large;
-    text-align: center;
-    box-shadow: 10px 8px 8px rgba(0, 0, 0, 0.15);
-} */
-
-/* chart */
-/* .chartContainer {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.expenseChart {
-    width: 42%;
-    margin: 40px auto;
-    padding: 10px;
-    background-color: rgba(218, 199, 175, 0.4);
-    border-radius: 10px;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
-}
-
-.expenseChart h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: rgb(160, 70, 244);
-    font-size: large;
-} */
-
-/* Pie chart */
-/* .pieChart {
-    width: 42%;
-    margin: 40px auto;
-    padding: 10px;
-    background-color: rgba(218, 199, 175, 0.5);
-    border-radius: 10px;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
-}
-
-.pieChart h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: rgb(160, 70, 244);
-    font-size: large;
-} */

@@ -18,22 +18,29 @@ export default function AddBudget() {
         // console.log(e.target.value);
     }
     const addBudget = async () => {
+        const token = localStorage.getItem("token");
         if (!category || !amount) {
             alert("Enter All Fields");
             return;
         }
-        const addData = await axios.post(ApiUrl, {
-            category,
-            amount
-        });
+        const addData = await axios.post(ApiUrl,
+            {
+                category: category,
+                amount: amount
+            },
+            {
+                headers: {
+                    Authorization: token
+                }
+            });
         console.log(`Data Added ${addData.data}`);
         navigate("/budgets/list")
     }
     return (
         <div>
             {/* <h1 className="text-center mt-4 mb-4">Budget Page</h1> */}
-            <div class="card budget-form mt-4" >
-                <div class="card-body form-body">
+            <div className="card budget-form mt-4" >
+                <div className="card-body form-body">
                     <h3 className="fs-3 mb-5">Add Budget</h3>
                     <input id="inp" placeholder="Enter Category" value={category} onChange={handleCategory} />
                     <input id="inp" placeholder="Enter Amount" type="number" value={amount} onChange={handleAmount} />

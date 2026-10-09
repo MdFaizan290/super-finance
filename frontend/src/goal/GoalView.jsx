@@ -16,7 +16,15 @@ function GoalView() {
         console.log(e.target.value);
     }
     const viewGoal = async () => {
-        const res = await axios.get(`${ApiUrl}/${id}`);
+        const token = localStorage.getItem("token");
+        if (!token) {
+            return;
+        }
+        const res = await axios.get(`${ApiUrl}/${id}`, {
+            headers: {
+                Authorization: token
+            }
+        });
         setGoal(res.data);
     }
     useEffect(() => {

@@ -164,6 +164,227 @@ button {
     animation: loading 1s linear infinite;
 }
 
+
+
+/* logout view */
+.expenseGuest {
+    width: 90%;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+
+.expenseGuestCard {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 25px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+/* Wallet Icon */
+
+.expenseGuestIcon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff1a8;
+    border-radius: 20px;
+
+    font-size: 32px;
+    color: rgb(173, 93, 247);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.expenseGuestCard h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.expenseGuestDescription {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.expenseGuestDescription strong {
+    color: rgb(92, 2, 176);
+}
+
+/* Features */
+
+.expenseFeatures {
+    margin-top: 35px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+
+    text-align: left;
+}
+
+.expenseFeature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding: 20px;
+
+    background: #fffdf0;
+    border: 1px solid #f0e7a5;
+    border-radius: 16px;
+
+    transition: all 0.25s ease;
+}
+
+.expenseFeature:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.featureIcon {
+    min-width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff1a8;
+    border-radius: 12px;
+
+    font-size: 22px;
+}
+
+.expenseFeature h5 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+}
+
+.expenseFeature p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Bottom CTA */
+
+.expenseGuestBottom {
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.expenseGuestBottom h5 {
+    margin-bottom: 5px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #222;
+}
+
+.expenseGuestBottom p {
+    color: #777;
+    margin-bottom: 18px;
+}
+
+.expenseGuestBottom button {
+    border: none;
+    background: #222;
+    color: white;
+
+    padding: 12px 24px;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.expenseGuestBottom button i {
+    margin-right: 8px;
+}
+
+.expenseGuestBottom button:hover {
+    transform: translateY(-2px);
+    background: #000;
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .expenseGuest {
+        width: 94%;
+    }
+
+    .expenseGuestCard {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .expenseGuestCard h3 {
+        font-size: 24px;
+    }
+
+    .expenseGuestDescription {
+        font-size: 14px;
+    }
+
+    .expenseFeatures {
+        grid-template-columns: 1fr;
+    }
+
+    .expenseFeature {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .expenseGuestCard {
+        padding: 25px 15px;
+    }
+
+    .expenseGuestIcon {
+        width: 65px;
+        height: 65px;
+        font-size: 27px;
+    }
+
+    .expenseGuestCard h3 {
+        font-size: 21px;
+    }
+
+    .expenseGuestBottom h5 {
+        font-size: 17px;
+    }
+
+    .expenseGuestBottom button {
+        width: 100%;
+    }
+}
+
+
+
 @keyframes loading {
     from {
         transform: rotate(0deg);
@@ -397,6 +618,8 @@ button {
 ::-webkit-scrollbar-thumb:hover {
     background: #d9f0a7;
 }
+
+
 
 
 

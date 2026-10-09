@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./BudgetList.css";
 import { BASE_URL } from "../BackendUrl";
 
@@ -9,10 +9,21 @@ function BudgetList() {
     const [loading, setLoading] = useState(true);
     const randomNumber = Math.floor(Math.random() * 3000) + 200;
 
+    const navigate = useNavigate();
     const ApiUrl = `${BASE_URL}/api/budgets`;
 
     const fetchBudget = async () => {
-        const budgets = await axios.get(ApiUrl);
+        const token = localStorage.getItem("token");
+        if (!token) {
+            return;
+        }
+        const budgets = await axios.get(`${BASE_URL}/api/budgets`,
+            {
+                headers: {
+                    Authorization: token
+                }
+            }
+        );
         setBudget(budgets.data);
         // console.log(budgets.data);
     };
@@ -29,13 +40,18 @@ function BudgetList() {
     }, []);
 
     const deleteBudget = async (id) => {
-        const dltBudget = await axios.delete(`${ApiUrl}/${id}`);
+        const dltBudget = await axios.delete(`${ApiUrl}/${id}`, {
+            headers: {
+                Authorization: token
+            }
+        });
         console.log(dltBudget);
         fetchBudget();
     };
 
+    const token = localStorage.getItem("token");
     return (
-        <div className="budgetPage">
+        token ? (<div className="budgetPage">
             {/* Heading */}
             <div className="budgetHead">
                 <h1>Budget List</h1>
@@ -77,7 +93,70 @@ function BudgetList() {
             <div className="bottomAddBudget">
                 <Link to="/budgets/new" className="btn btn-primary"><i className="fa-solid fa-plus"></i> Add Budget</Link>
             </div>
-        </div>
+        </div>) : (
+            <div className="budgetGuest mt-5">
+                <div className="budgetGuestCard">
+
+                    <div className="budgetGuestIcon">
+                        <i className="fa-solid fa-chart-pie"></i>
+                    </div>
+
+                    <h3>Plan Your Money, Reach Your Goals 🎯</h3>
+
+                    <p className="budgetGuestDescription">
+                        Create smart budgets, control your spending, and make every
+                        rupee count with <strong>Super Finance</strong>.
+                    </p>
+
+                    <div className="budgetFeatures">
+
+                        <div className="budgetFeature">
+                            <div className="budgetFeatureIcon">💰</div>
+                            <div>
+                                <h5>Create Your Budget</h5>
+                                <p>Set spending limits and plan your money for every category.</p>
+                            </div>
+                        </div>
+
+                        <div className="budgetFeature">
+                            <div className="budgetFeatureIcon">📊</div>
+                            <div>
+                                <h5>Monitor Your Spending</h5>
+                                <p>See how much you've spent and how much budget is remaining.</p>
+                            </div>
+                        </div>
+
+                        <div className="budgetFeature">
+                            <div className="budgetFeatureIcon">🚦</div>
+                            <div>
+                                <h5>Stay Within Your Limits</h5>
+                                <p>Avoid unnecessary spending by keeping your expenses under control.</p>
+                            </div>
+                        </div>
+
+                        <div className="budgetFeature">
+                            <div className="budgetFeatureIcon">🎯</div>
+                            <div>
+                                <h5>Build Better Habits</h5>
+                                <p>Develop healthy financial habits and work towards your goals.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className="budgetGuestBottom">
+                        <h5>Ready to start planning your money?</h5>
+                        <p>Login to create and manage your budgets.</p>
+
+                        <button onClick={() => navigate("/login")}>
+                            <i className="fa-solid fa-right-to-bracket"></i>
+                            Login to Continue
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        )
     );
 }
 

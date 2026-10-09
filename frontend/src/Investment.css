@@ -1,0 +1,504 @@
+.investmentLanding {
+    min-height: 100vh;
+    overflow: hidden;
+    color: #0d1536;
+    background:
+        radial-gradient(ellipse at 82% 25%, #e3eaff 0%, transparent 30%),
+        radial-gradient(ellipse at 63% 35%, #f0e8ff 0%, transparent 35%),
+        rgb(237, 245, 253);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar */
+.investmentNav {
+    min-height: 88px;
+    padding: 0 5.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid #f0eff9;
+}
+
+.investmentBrand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #101735;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.investmentBrand i {
+    color: #7350ff;
+    font-size: 39px;
+}
+
+.investmentBrand strong {
+    color: #7042f5;
+}
+
+.investmentNavLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.investmentNavLinks a {
+    padding: 13px 16px;
+    border-radius: 18px;
+    color: #11172f;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.25s ease;
+}
+
+.investmentNavLinks a:hover,
+.investmentNavLinks a.active {
+    color: #6538f5;
+    background: #efebff;
+}
+
+.investmentProfile {
+    width: 47px;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #673af5;
+    background: #eae5ff;
+    text-decoration: none;
+    font-size: 21px;
+    flex-shrink: 0;
+}
+
+/* Hero */
+.investmentHero {
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    align-items: center;
+    gap: 15px;
+    padding: 55px 5.5% 20px;
+}
+
+.investmentHeroContent {
+    min-width: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.investmentEyebrow {
+    color: #6440ff;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+.investmentHeroContent h1 {
+    margin: 23px 0 22px;
+    color: #0b1331;
+    font-size: clamp(38px, 4.15vw, 64px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    font-weight: 800;
+}
+
+.investmentHeroContent h1 span {
+    color: #7044f8;
+}
+
+.investmentIntro {
+    max-width: 650px;
+    margin: 0;
+    color: #354469;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Coming Soon notice */
+.investmentNotice {
+    margin-top: 34px;
+    padding: 22px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 25px;
+    background: linear-gradient(110deg, #f2efff, #eeebff);
+}
+
+.noticeRocket {
+    width: 70px;
+    flex-shrink: 0;
+    text-align: center;
+    color: #7650ff;
+    font-size: 43px;
+}
+
+.noticeText {
+    flex: 1;
+    min-width: 0;
+}
+
+.noticeText h2 {
+    margin: 0 0 8px;
+    color: #6033f2;
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+.noticeText p {
+    margin: 0;
+    color: #273858;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.noticeBadge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 17px 20px;
+    border-radius: 18px;
+    color: #fff;
+    background: linear-gradient(120deg, #8057ff, #5d31ed);
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Right side artwork */
+.investmentArtwork {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 430px;
+}
+
+.artGlow {
+    position: absolute;
+    z-index: 0;
+    width: 110%;
+    height: 85%;
+    border-radius: 48% 52% 44% 56%;
+    background: linear-gradient(135deg, #e6e3ff, #dbe9ff, #e9e0ff);
+    transform: rotate(-8deg);
+}
+
+.investmentArtworkImage {
+    position: relative;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 20px rgba(85, 65, 180, 0.10));
+    border-radius: 0.4rem;
+}
+
+/* Features */
+.investmentExpect {
+    padding: 28px 4% 38px;
+    text-align: center;
+}
+
+.investmentExpect>h2 {
+    margin: 0 0 10px;
+    color: #0d1536;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.investmentExpect>h2 span {
+    color: #7044f8;
+}
+
+.expectSubtitle {
+    margin: 0 0 28px;
+    color: #354469;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.investmentFeatureGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.investmentFeatureCard {
+    padding: 22px 18px 20px;
+    min-width: 0;
+    border: 1px solid #e7e7fa;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.investmentFeatureCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(92, 65, 183, 0.10);
+}
+
+.featureIcon {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    font-size: 27px;
+}
+
+.featureIcon.purple {
+    color: #6336f6;
+    background: #eee9ff;
+}
+
+.featureIcon.orange {
+    color: #ffa900;
+    background: #fff1df;
+}
+
+.featureIcon.green {
+    color: #14b87a;
+    background: #e4f8ee;
+}
+
+.featureIcon.red {
+    color: #ff4b56;
+    background: #ffe5e7;
+}
+
+.investmentFeatureCard h3 {
+    margin: 0 0 9px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.investmentFeatureCard p {
+    max-width: 270px;
+    margin: 0 auto;
+    color: #344366;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Footer */
+.investmentFooter {
+    padding: 20px 5%;
+    text-align: center;
+    border-top: 1px solid #f0edff;
+    color: #85839a;
+    font-size: 12px;
+}
+
+.investmentFooter p {
+    margin: 0;
+}
+
+/* Laptop / tablet */
+@media (max-width: 1100px) {
+    .investmentNav {
+        padding: 0 3%;
+        gap: 15px;
+    }
+
+
+    .investmentBrand {
+        font-size: 24px;
+    }
+
+    .investmentNavLinks {
+        gap: 5px;
+    }
+
+    .investmentNavLinks a {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+    .investmentHero {
+        grid-template-columns: 1fr 0.8fr;
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+
+    .investmentNotice {
+        flex-wrap: wrap;
+        gap: 13px;
+    }
+
+    .noticeBadge {
+        margin-left: 85px;
+    }
+
+    .investmentArtworkImage {
+        width: 120%;
+    }
+
+    .investmentFeatureGrid {
+        gap: 12px;
+    }
+
+
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .investmentNav {
+        min-height: 75px;
+        flex-wrap: wrap;
+        padding: 14px 5%;
+        gap: 12px;
+    }
+
+
+    .investmentBrand {
+        font-size: 22px;
+    }
+
+    .investmentBrand i {
+        font-size: 29px;
+    }
+
+    .investmentProfile {
+        width: 39px;
+        height: 39px;
+        font-size: 17px;
+    }
+
+    .investmentNavLinks {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+
+    .investmentNavLinks a {
+        flex-shrink: 0;
+        font-size: 13px;
+    }
+
+    .investmentHero {
+        grid-template-columns: 1fr;
+        padding: 38px 5% 10px;
+        gap: 5px;
+    }
+
+    .investmentHeroContent h1 {
+        font-size: clamp(36px, 9vw, 52px);
+        letter-spacing: -1.5px;
+    }
+
+    .investmentEyebrow {
+        font-size: 13px;
+        letter-spacing: 4px;
+    }
+
+    .investmentIntro {
+        font-size: 16px;
+    }
+
+    .investmentNotice {
+        padding: 20px 15px;
+        border-radius: 18px;
+    }
+
+    .noticeRocket {
+        width: 42px;
+        font-size: 30px;
+    }
+
+    .noticeText h2 {
+        font-size: 16px;
+    }
+
+    .noticeText p {
+        font-size: 13px;
+    }
+
+    .noticeBadge {
+        width: 100%;
+        margin-left: 0;
+        box-sizing: border-box;
+    }
+
+    .investmentArtwork {
+        min-height: 280px;
+        margin: 10px 0;
+    }
+
+    .investmentArtworkImage {
+        width: 110%;
+        max-width: 100%;
+    }
+
+    .artGlow {
+        width: 100%;
+    }
+
+    .investmentExpect {
+        padding: 25px 5% 30px;
+    }
+
+    .investmentExpect>h2 {
+        font-size: 27px;
+    }
+
+    .expectSubtitle {
+        font-size: 14px;
+    }
+
+    .investmentFeatureGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .investmentFeatureCard {
+        padding: 18px 10px;
+    }
+
+    .featureIcon {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+
+    .investmentFeatureCard h3 {
+        font-size: 15px;
+    }
+
+    .investmentFeatureCard p {
+        font-size: 12px;
+    }
+
+
+}
+
+@media (max-width: 380px) {
+    .investmentBrand {
+        font-size: 19px;
+    }
+
+
+    .investmentHeroContent h1 {
+        font-size: 34px;
+    }
+
+    .investmentFeatureGrid {
+        grid-template-columns: 1fr;
+    }
+
+
+}

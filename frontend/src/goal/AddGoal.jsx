@@ -18,13 +18,24 @@ function AddGoal() {
         // console.log(e.target.value);
     }
     const addGoal = async () => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            return;
+        }
         if (!title || !targetAmount) {
             return;
         }
-        const goal = await axios.post(ApiUrl, {
-            title,
-            targetAmount
-        });
+        const goal = await axios.post(ApiUrl,
+            {
+                title,
+                targetAmount
+            },
+            {
+                headers: {
+                    Authorization: token
+                }
+            }
+        );
         alert("Goal Added Successfully");
         console.log(goal.data);
         navigate("/goals/list")
