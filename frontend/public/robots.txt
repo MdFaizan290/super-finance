@@ -1,6 +1,4 @@
-
 User-agent: *
 Allow: /
 
 Sitemap: https://super-fin.onrender.com/sitemap.xml
-

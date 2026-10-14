@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Investment.css";
+import "./invest.css";
 
-const Investment = () => {
+const Invest = () => {
     const features = [
         {
             icon: "fa-chart-column",
@@ -143,4 +143,4 @@ const Investment = () => {
 
 };
 
-export default Investment;
+export default Invest;

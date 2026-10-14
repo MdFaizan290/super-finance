@@ -18,8 +18,11 @@ import PageNotFound from './PageNotFound';
 import SignIn from './register/SignUp';
 import Register from './login/Register';
 import Login from './login/Login';
-import Investment from './Investment';
+import Investment from './invest/Investment';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Invest from "./invest/invest";
+import StockNews from './invest/StockNews';
+
 // import InvestmentHome from './investment/Home';
 // import Dashboard from "./components/Dashboard";
 
@@ -47,7 +50,10 @@ root.render(
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/investment' element={<Investment />} />
+        <Route path='/invest' element={<Invest />} />
+        <Route path='/news' element={<StockNews />} />
         <Route path='/*' element={<PageNotFound />} />
+
       </Routes>
 
       <Footer />
