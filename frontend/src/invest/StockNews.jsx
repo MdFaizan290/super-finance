@@ -62,45 +62,33 @@ const StockNews = () => {
     }, []);
 
     useEffect(() => {
-        fetchNews();
+    fetchNews();
     }, [fetchNews]);
 
     return (
-        <section className="stockNews">
+        <section className="stock-news">
             <div className="stockNewsHeader">
                 <h2>Latest Stock Market News</h2>
-
                 <button onClick={fetchNews} disabled={loading}>
                     {loading ? "Loading..." : "Refresh News"}
                 </button>
             </div>
-
             {error && <p>{error}</p>}
 
             <div className="stockNewsGrid">
                 {articles.map((article) => (
-                    <article
-                        className="stockNewsCard"
-                        key={article.uuid || article.url}
-                    >
-                        {article.image_url && (
-                            <img src={article.image_url} alt="" />
-                        )}
+                    <article className="article" key={article.uuid || article.url}>
 
                         <h3>{article.title}</h3>
-                        <p>{article.description || "Read the full article for details."}</p>
+                        <p className="description">{article.description || "Read the full article for details."}</p>
+                        {article.image_url && (<img className="image" src={article.image_url} alt="" />)}
 
-                        <small>
+                        <small className="source">
                             {article.source || "News"}{" "}
-                            {article.published_at &&
-                                `• ${new Date(article.published_at).toLocaleString()}`}
+                            {article.published_at && `• ${new Date(article.published_at).toLocaleString()}`}
                         </small>
 
-                        <a
-                            href={article.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <a className="source-link" href={article.url} target="_blank" rel="noopener noreferrer">
                             Read Full News
                         </a>
                     </article>
