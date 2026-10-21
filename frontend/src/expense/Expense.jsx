@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import "./Expense.css";
 import axios from 'axios';
-import { BASE_URL } from '../BackendUrl';
+import { BASE_URL } from '../components/BackendUrl';
 // import { ExpenseContext } from "../ContextProvider";
 
 function Expense() {

@@ -1,3 +1,20 @@
+.marketNews{
+    display: block;
+    padding: 1rem;
+    width: fit-content;
+    text-align: center;
+    align-self: center;
+    margin: 0 auto;
+    font-size: large;
+    font-weight: 600;
+    background-color: #f0d6fe;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.marketNews:hover{
+    scale: 1.03;
+}
+
 .dashboard {
     width: 90%;
     max-width: 1400px;
@@ -8,15 +25,15 @@
 }
 
 .box {
-    background-color: rgba(249, 225, 196, 0.7);
+    background-color: #f0ebfa;
     width: 100%;
-    min-height: 200px;
+    min-height: 150px;
     box-sizing: border-box;
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 20px;
-    color: blueviolet;
+    /* color: rgb(155, 53, 252); */
     font-weight: 600;
-    font-size: large;
+    font-size: medium;
     text-align: center;
     box-shadow: 10px 8px 8px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -40,10 +57,16 @@
     box-sizing: border-box;
     padding: 10px;
     margin: 20px 0;
-    background-color: rgba(218, 199, 175, 0.4);
+    background-color: rgba(189, 198, 245, 0.3);
+    /* background-color: #f7eaf9; */
+    /* background:linear-gradient(to right , #f6f7fc,#d7d9fd) ; */
     border-radius: 10px;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
 }
+
+/* .expenseChart:hover {
+    background-color: rgb(237, 231, 243);
+} */
 
 .expenseChart h2 {
     text-align: center;
@@ -58,7 +81,7 @@
     box-sizing: border-box;
     padding: 10px;
     margin: 20px 0;
-    background-color: rgba(218, 199, 175, 0.5);
+    background-color: rgba(189, 198, 245, 0.3);
     border-radius: 10px;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
 }

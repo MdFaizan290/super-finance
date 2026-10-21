@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./AddGoal.css";
-import { BASE_URL } from '../BackendUrl';
+import { BASE_URL } from '../components/BackendUrl';
 
 function AddGoal() {
     const [title, setTitle] = useState("");

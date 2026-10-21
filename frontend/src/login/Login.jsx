@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { BASE_URL } from "../BackendUrl";
+import { BASE_URL } from "../components/BackendUrl";
 import axios from "axios";
-import { ExpenseContext } from "../ContextProvider";
+import { ExpenseContext } from "../components/ContextProvider";
 import "./Login.css";
 
 function Login() {
@@ -10,6 +10,7 @@ function Login() {
     const [formData, setFormData] = useState({ email: "", password: "" });
     const [showPassword, setShowPassword] = useState(false);
     const [loggedIn, setLoggedIn] = useState(null);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -19,6 +20,7 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
         // console.log(formData);
         try {
             const response = await axios.post(`${BASE_URL}/api/user/login`, {
@@ -26,20 +28,15 @@ function Login() {
             })
             // After successful login
             localStorage.setItem("token", response.data.token);
+
             await fetchUser();
             alert("Logged In Successfully");
-            // setLoggedIn("Logged In Successfully");
-            // setTimeout(() => {
-            //     setLoggedIn("")
-            // }, 5000)
             navigate("/");
         } catch (err) {
             const message = err.response?.data?.message || "Something went wrong";
             setLoggedIn(message);
-            // setTimeout(() => {
-            //     setLoggedIn("")
-            // }, 10000)
-            // alert(message);
+        } finally {
+            setLoading(false);
         }
     };
     const showLoginMessage = async () => {
@@ -85,7 +82,14 @@ function Login() {
                         <span>Remember me</span>
                     </label>
 
-                    <button type="submit" className="loginBtn">Login<i className="fa-solid fa-arrow-right"></i></button>
+                    {/* <button type="submit" className="loginBtn">Login<i className="fa-solid fa-arrow-right"></i>{loading ? <div className="loader"></div> : ""}</button> */}
+                    <button type="submit" className="loginBtn" disabled={loading}>
+                        {loading ? (
+                            <><div className="loader"></div><span>Logging in...</span></>
+                        ) : (
+                            <><span>Login</span><i className="fa-solid fa-arrow-right"></i></>
+                        )}
+                    </button>
                 </form>
                 <div className="registerText">Don't have an account?<Link to="/register">Create Account</Link></div>
             </div>

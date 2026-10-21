@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import './AddBudget.css'
-import { BASE_URL } from '../BackendUrl';
+import { BASE_URL } from '../components/BackendUrl';
 function EditBudget() {
     const [category, setCategory] = useState("");
     const [amount, setAmount] = useState(null);

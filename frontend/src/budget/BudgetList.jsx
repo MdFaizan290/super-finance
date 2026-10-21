@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./BudgetList.css";
-import { BASE_URL } from "../BackendUrl";
+import { BASE_URL } from "../components/BackendUrl";
 
 function BudgetList() {
     const [budget, setBudget] = useState([]);
@@ -65,9 +65,9 @@ function BudgetList() {
                     <div className="load"></div>
                 </div>
             ) : budget.length === 0 ? (<p className="noBudget">No Budget</p>) : (
-                <div className="budgetContainer">
+                <div className={`budgetContainer ${budget.length === 1 ? "singleBudget" : ""}`}>
                     {budget.map((list) => (
-                        <div key={list._id} className="budgetCard">
+                        <div key={list._id} className="budgetCard" style={{ justifyItems: budget.length == 1 && "center" }}>
                             <div className="budgetCardBody">
                                 <h3>{list.category}</h3>
                                 <h5>&#8377; {list.amount}</h5>
@@ -90,9 +90,9 @@ function BudgetList() {
                 </div>
             )}
             {/* Bottom Add Button */}
-            <div className="bottomAddBudget">
+            {/* <div className="bottomAddBudget">
                 <Link to="/budgets/new" className="btn btn-primary"><i className="fa-solid fa-plus"></i> Add Budget</Link>
-            </div>
+            </div> */}
         </div>) : (
             <div className="budgetGuest mt-5">
                 <div className="budgetGuestCard">

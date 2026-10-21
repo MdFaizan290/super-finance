@@ -1,0 +1,724 @@
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+    padding: 18px 20px;
+    background-color: #F4EFFF;
+    /* background: linear-gradient(to bottom, #f0eaff,#d5e7fc); */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5dba8;
+
+}
+
+/* Logo */
+.tagLink {
+    text-decoration: none;
+    margin-left: 30px;
+    flex-shrink: 0;
+}
+
+.tag {
+    color: blueviolet;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 0;
+    background-color: rgba(62, 181, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.tag:hover {
+    transform: scale(1.04);
+}
+
+/* Navigation items */
+.para {
+    margin: 0;
+    padding: 10px;
+    color: blueviolet;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.para:hover {
+    transform: scale(1.04);
+    font-weight: 600;
+    opacity: 1;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.s {
+    margin: -6px;
+    padding: 0;
+}
+
+#profile {
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+#profile img {
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    object-fit: cover;
+    margin-right: -2rem;
+}
+
+
+/* Profile dropdown */
+/* .profileContainer {
+    position: fixed;
+    top: 70px;
+    right: 30px;
+    width: 180px;
+    padding: 10px 0;
+    background-color: aliceblue;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+} */
+
+.profileContainer {
+    position: fixed;
+    top: 70px;
+    right: 30px;
+    width: 180px;
+    padding: 10px 0;
+    background-color: rgba(219, 220, 221, 1);
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Arrow */
+.profileContainer::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(219, 220, 221, 1);
+}
+
+/* Dropdown items */
+.profileContainer p {
+    margin: 0;
+    padding: 12px 18px;
+    line-height: normal;
+    color: #333;
+    cursor: pointer;
+    border-bottom: 1px solid silver;
+}
+
+.profileContainer p:hover {
+    background-color: rgba(137, 43, 226, 0.1);
+    color: blueviolet;
+}
+
+/* User Data */
+.userData {
+    background-color: #f8f6f6;
+
+}
+
+
+/* Tablet */
+@media (max-width: 992px) {
+    .navContainer {
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .tagLink {
+        margin-left: 10px;
+    }
+
+    .tag {
+        padding: 8px 12px;
+        font-size: 15px;
+    }
+
+    .para {
+        padding: 8px 6px;
+        font-size: 14px;
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    #profile img {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0;
+    }
+
+    .profileContainer {
+        top: 60px;
+        right: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px;
+    }
+
+    /* Logo takes full row */
+    .tagLink {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .tag {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    /* Navigation row */
+    .para {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .profileContainer {
+        top: 105px;
+        right: 15px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .navContainer {
+        justify-content: space-around;
+        /* overflow-x: auto; */
+        /* flex-wrap: wrap; */
+        gap: 3px;
+        padding: 8px;
+    }
+
+    /* Keep logo at top */
+    .tagLink {
+        width: auto;
+        flex-shrink: 0;
+        margin: 0 5px 0 0;
+    }
+
+    .tag {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .para {
+        padding: 8px 7px;
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+
+    svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    #profile img {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+
+    .profileContainer {
+        top: 55px;
+        right: 10px;
+        width: 160px;
+    }
+}
+
+
+/* Profile trigger in navbar */
+.navProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    border: none;
+    background: transparent;
+    color: blueviolet;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    /* padding: 0   px; */
+    min-width: 0;
+}
+
+.navProfile img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.navProfile:hover {
+    color: #5725a5;
+}
+
+.navAuth {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.navAuth a {
+    color: blueviolet;
+    text-decoration: none;
+}
+
+/* Dark overlay */
+.sidebarOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(22, 18, 35, 0.4);
+    z-index: 1000;
+    animation: overlayFade 0.25s ease;
+}
+
+/* Full-height account sidebar */
+.accountSidebar {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    width: 350px;
+    max-width: 90vw;
+    background: #ffffff;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 28px rgba(40, 20, 70, 0.15);
+    animation: sidebarSlide 0.3s ease;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* Sidebar top section */
+.sidebarHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 22px 18px;
+    background: #f4efff;
+    border-bottom: 1px solid #e5dba8;
+}
+
+.sidebarUser {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.sidebarUser img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.sidebarUser h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    color: #51258b;
+    overflow-wrap: anywhere;
+}
+
+.sidebarUser p {
+    margin: 0;
+    color: #71677d;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.sidebarClose {
+    border: none;
+    background: transparent;
+    color: #51445f;
+    font-size: 15px;
+    cursor: pointer;
+    /* padding: 4px; */
+    flex-shrink: 0;
+}
+
+.sidebarClose:hover {
+    /* font-size: large; */
+    transform: scale(1.3);
+    transition: 0.3s ease;
+}
+
+.sidebarContent {
+    padding: 12px;
+}
+
+.sidebarLabel {
+    color: #8c819c;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 18px 10px 8px;
+}
+
+.sidebarItem {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    padding: 13px 12px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #40364c;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebarItem>span {
+    flex: 1;
+}
+
+.sidebarItem>i:first-child {
+    width: 18px;
+    text-align: center;
+    color: #8250c9;
+}
+
+.sidebarItem:hover,
+.sidebarItem.selected {
+    background: #f0e7ff;
+    color: #692bb0;
+}
+
+.sidebarItem.selected {
+    font-weight: 600;
+}
+
+.sidebarItem .arrow {
+    font-size: 11px;
+    color: #9585a8;
+}
+
+.sidebarDetails {
+    margin: 0 18px 20px;
+    padding: 16px;
+    background: #f8f6fc;
+    border: 1px solid #eee7f8;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+.sidebarDetails h3 {
+    margin: 0 0 12px;
+    color: #51258b;
+    font-size: 16px;
+}
+
+.sidebarDetails p {
+    color: #5e566a;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.sidebarFooter {
+    margin-top: auto;
+    padding: 12px;
+    border-top: 1px solid #eee7f8;
+    background: #fff;
+}
+
+.logoutItem {
+    color: #c62828;
+}
+
+.logoutItem>i:first-child {
+    color: #c62828;
+}
+
+.logoutItem:hover {
+    background: #fff0f0;
+    color: #b71c1c;
+}
+
+@keyframes sidebarSlide {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes overlayFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+    .accountSidebar {
+        top: 110px;
+        width: 320px;
+    }
+
+    .navProfile {
+        gap: 5px;
+        font-size: 12px;
+    }
+
+    .navProfile img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .accountSidebar {
+        top: 0;
+        width: min(340px, 90vw);
+        max-width: 90vw;
+    }
+
+    .navProfile span {
+        max-width: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .accountSidebar,
+    .sidebarOverlay {
+        animation: none;
+    }
+}
+
+
+.profileImageWrapper {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+}
+
+.sidebarProfileImage {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #d8c4f5;
+}
+
+.uploadImageButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: blueviolet;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.uploadImageButton:hover {
+    background: #5725a5;
+}
+
+.uploadImageButton:focus-within {
+    outline: 2px solid #5725a5;
+    outline-offset: 2px;
+}
+
+
+/* Make the sidebar image clickable */
+.sidebarProfileImage {
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
+
+.sidebarProfileImage:hover {
+    transform: scale(1.05);
+}
+
+/* Full-screen image viewer */
+.fullImageOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(15, 12, 25, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px 20px;
+    box-sizing: border-box;
+    cursor: zoom-out;
+    animation: overlayFade 0.2s ease;
+}
+
+.fullProfileImage {
+    display: block;
+    max-width: min(90vw, 700px);
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    cursor: default;
+}
+
+.fullImageClose {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fullImageClose:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 480px) {
+    .fullImageOverlay {
+        padding: 50px 12px 12px;
+    }
+
+    .fullProfileImage {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+
+    .fullImageClose {
+        top: 12px;
+        right: 12px;
+    }
+}
+
+
+
+
+/* My CSS */
+/* .navContainer {
+    display: flex;
+    padding: 15px;
+    background-color: rgba(255, 255, 200, 1);
+    position: sticky;
+    top: 0;
+    z-index: 10; */
+/* align-items: center; */
+/* } */
+
+/* .para {
+    margin: 0 auto;
+    padding: 10px;
+    color: blueviolet;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: transform 0.5s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.para:hover {
+    transform: scale(1.04);
+    font-weight: 600;
+    opacity: 1;
+}
+
+svg {
+    width: 20px;
+}
+
+.tag {
+    color: blueviolet;
+    font-weight: bold;
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-radius: 10px;
+    margin: 0px;
+    background-color: rgba(62, 181, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.tag:hover {
+    transform: scale(1.04);
+}
+
+.tagLink {
+    text-decoration: none;
+    margin-left: 70px; */
+/* margin-right: 50px; */
+/* }
+
+.s {
+    margin: -6px;
+    padding: 0px;
+} */

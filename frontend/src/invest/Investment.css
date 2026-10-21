@@ -193,6 +193,7 @@
 .sf-panel {
   min-width: 0;
   padding: 24px;
+  /* height: 700px; */
 }
 
 .sf-panel-heading,
@@ -210,7 +211,7 @@
   margin: 0 0 7px;
 }
 
-.sf-panel-heading > i {
+.sf-panel-heading>i {
   color: var(--sf-purple);
   font-size: 22px;
 }
@@ -252,7 +253,7 @@
   gap: 11px;
 }
 
-.sf-order-panel form > label {
+.sf-order-panel form>label {
   margin-top: 5px;
   font-size: 12px;
   font-weight: 700;
@@ -290,7 +291,7 @@
   margin: 4px 0;
 }
 
-.sf-selected-stock > div,
+.sf-selected-stock>div,
 .sf-stock-name,
 .sf-stock-quote {
   display: flex;
@@ -406,6 +407,8 @@
 .sf-market-list {
   display: flex;
   flex-direction: column;
+  /* overflow-y: scroll;
+  height: 80%; */
 }
 
 .sf-market-row {
@@ -573,7 +576,7 @@
   margin-bottom: 22px;
 }
 
-.sf-bottom-summary > div {
+.sf-bottom-summary>div {
   display: flex;
   flex-direction: column;
   gap: 9px;
@@ -712,7 +715,7 @@
     gap: 10px;
   }
 
-  .sf-bottom-summary > div {
+  .sf-bottom-summary>div {
     padding: 16px;
   }
 

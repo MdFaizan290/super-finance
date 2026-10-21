@@ -1,6 +1,29 @@
 /* ==============================
    LOGIN PAGE
 ================================ */
+.loader {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loginBtn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 
 .error {
     color: red;
@@ -45,15 +68,10 @@
 .loginCard {
     width: 420px;
     max-width: 100%;
-
     padding: 38px;
-
     box-sizing: border-box;
-
     background: rgba(255, 255, 255, 0.7);
-
     border-radius: 20px;
-
     box-shadow: 0 12px 35px rgba(65, 54, 110, 0.12);
 }
 
@@ -64,34 +82,25 @@
 
 .loginLogo {
     text-align: center;
-
     margin-bottom: 30px;
 }
 
 .loginLogoIcon {
     width: 55px;
     height: 55px;
-
     margin: 0 auto 10px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     border-radius: 15px;
-
     background-color: rgba(62, 181, 255, 0.18);
-
     color: blueviolet;
-
     font-size: 25px;
 }
 
 .loginLogo h2 {
     margin: 0;
-
     color: blueviolet;
-
     font-size: 25px;
 }
 
@@ -101,9 +110,7 @@
 
 .loginLogo p {
     margin: 7px 0 0;
-
     color: #777;
-
     font-size: 14px;
 }
 
@@ -111,20 +118,15 @@
 /* ==============================
    INPUT GROUP
 ================================ */
-
 .loginInputGroup {
     margin-bottom: 20px;
 }
 
 .loginInputGroup label {
     display: block;
-
     margin-bottom: 7px;
-
     color: #333;
-
     font-size: 14px;
-
     font-weight: 600;
 }
 
@@ -132,12 +134,9 @@
 /* ==============================
    PASSWORD LABEL
 ================================ */
-
 .passwordLabel {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 }
 
@@ -147,11 +146,8 @@
 
 .passwordLabel a {
     margin-bottom: 7px;
-
     color: blueviolet;
-
     font-size: 12px;
-
     text-decoration: none;
 }
 
@@ -159,59 +155,39 @@
     text-decoration: underline;
 }
 
-
 /* ==============================
    INPUT BOX
 ================================ */
-
 .loginInputBox {
     width: 100%;
-
     display: flex;
-
     align-items: center;
-
     box-sizing: border-box;
-
     border: 1px solid #ddd;
-
     border-radius: 10px;
-
     background-color: #fafafa;
-
     transition: 0.2s;
 }
 
 .loginInputBox:focus-within {
     border-color: blueviolet;
-
     background-color: white;
-
-    box-shadow:
-        0 0 0 3px rgba(138, 43, 226, 0.1);
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1);
 }
 
 .loginInputBox>i:first-child {
     margin-left: 14px;
-
     color: #888;
-
     font-size: 15px;
 }
 
 .loginInputBox input {
     width: 100%;
-
     padding: 13px 10px;
-
     border: none;
-
     outline: none;
-
     background: transparent;
-
     font-size: 14px;
-
     box-sizing: border-box;
 }
 
@@ -219,16 +195,12 @@
     color: #aaa;
 }
 
-
 /* ==============================
    PASSWORD EYE
 ================================ */
-
 .loginPasswordIcon {
     margin-right: 14px;
-
     color: #888;
-
     cursor: pointer;
 }
 
@@ -236,35 +208,24 @@
     color: blueviolet;
 }
 
-
 /* ==============================
    REMEMBER ME
 ================================ */
-
 .rememberRow {
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
     margin: 5px 0 18px;
-
     color: #555;
-
     font-size: 13px;
-
     cursor: pointer;
 }
 
 .rememberRow input {
     width: 16px;
     height: 16px;
-
     margin: 0;
-
     accent-color: blueviolet;
-
     cursor: pointer;
 }
 
@@ -272,73 +233,47 @@
 /* ==============================
    LOGIN BUTTON
 ================================ */
-
 .loginBtn {
     width: 100%;
-
     padding: 13px;
-
     border: none;
-
     border-radius: 10px;
-
     background-color: blueviolet;
-
     color: white;
-
     font-size: 15px;
-
     font-weight: 600;
-
     cursor: pointer;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     gap: 10px;
-
     transition: 0.3s;
-
 }
 
 .loginBtn:hover {
     background-color: #7225a8;
-
     transform: translateY(-1px);
-
-    box-shadow:
-        0 6px 15px rgba(138, 43, 226, 0.25);
+    box-shadow: 0 6px 15px rgba(138, 43, 226, 0.25);
 }
 
 .loginBtn:active {
     transform: translateY(0);
 }
 
-
 /* ==============================
    REGISTER TEXT
 ================================ */
-
 .registerText {
     text-align: center;
-
     margin-top: 24px;
-
     color: #777;
-
     font-size: 14px;
 }
 
 .registerText a {
     margin-left: 5px;
-
     color: blueviolet;
-
     font-weight: 600;
-
     text-decoration: none;
 }
 
@@ -346,11 +281,9 @@
     text-decoration: underline;
 }
 
-
 /* ==============================
    MOBILE
 ================================ */
-
 @media (max-width: 480px) {
 
     .loginPage {
@@ -359,7 +292,6 @@
 
     .loginCard {
         padding: 28px 22px;
-
         border-radius: 16px;
     }
 

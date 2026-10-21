@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import "./GoalView.css";
-import { BASE_URL } from '../BackendUrl';
+import { BASE_URL } from '../components/BackendUrl';
 
 function GoalView() {
     const { id } = useParams();

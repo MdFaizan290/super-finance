@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "./home.css";
-import { ExpenseContext } from "./ContextProvider";
+import { ExpenseContext } from "./components/ContextProvider";
 import {
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, ComposedChart, Line,
     Tooltip, ResponsiveContainer, PieChart, Pie, Legend
 } from "recharts";
 import { useEffect } from 'react';
 import { useState } from 'react';
+import StockNews from './invest/StockNews';
 
 function Home() {
     const { expense, budget, goal, fetchExpense, fetchBudget, fetchGoal } = useContext(ExpenseContext);
@@ -356,8 +357,11 @@ function Home() {
 
                     </div>
                 </div>
+
                 <div className='a'>
+                    <span className='marketNews' onClick={() => navigate("/news")}><i class="fa-regular fa-newspaper"></i> Market Update / Market News</span>
                     <div className='landingPage'>
+
                         <div className='left'>
                             <img src='/finance_img.png' />
                             <p className='p'><strong style={{ color: "rgb(147, 37, 250)" }}>Super Finance</strong> simplifies finances by bringing all your accounts together into one clear view. Always know where your money is and where it's going, achieve your goals quicker, and collaborate with your partner or professional at no extra cost.</p>

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
-import { BASE_URL } from "../BackendUrl";
+import { BASE_URL } from "../components/BackendUrl";
 import axios from "axios";
 
 function Register() {

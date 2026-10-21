@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./list.css";
-import { BASE_URL } from "../BackendUrl";
+import { BASE_URL } from "../components/BackendUrl";
 
 function GoalList() {
     const [goals, setGoals] = useState([]);
@@ -108,11 +108,11 @@ function GoalList() {
                 ))
             )}
             {/* Bottom Add Goal */}
-            {!loading && (
+            {/* {!loading && (
                 <div className="bottom-add-goal">
                     <Link to="/goals/new" className="btn btn-primary"><i className="fa-solid fa-plus"></i>{" "}Add Goal</Link>
                 </div>
-            )}
+            )} */}
         </div>) : (
             <div className="goalGuest mt-5">
                 <div className="goalGuestCard">

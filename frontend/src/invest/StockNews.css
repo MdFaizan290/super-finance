@@ -25,11 +25,18 @@
 .article .image {
     display: block;
     margin: auto;
-    width: 60%;
+    width: 60%; 
     border-radius: 1rem;
 }
 
 .article .source,
 .article .source-link {
     margin: 1rem;
+}
+
+.btn-danger{
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
 }

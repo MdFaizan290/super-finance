@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./AddBudget.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { BASE_URL } from "../BackendUrl";
+import { BASE_URL } from "../components/BackendUrl";
 
 export default function AddBudget() {
     const [category, setCategory] = useState("");

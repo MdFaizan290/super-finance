@@ -53,6 +53,11 @@
     transition: 0.2s;
 }
 
+.budgetContainer.singleBudget {
+    grid-template-columns: minmax(280px, 487.5px);
+    justify-content: center;
+}
+
 .budgetCard:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);

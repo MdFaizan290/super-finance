@@ -1,7 +1,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "../BackendUrl";
+import { BASE_URL } from "../components/BackendUrl";
 import "./StockNews.css";
 
 const StockNews = () => {
@@ -14,9 +14,7 @@ const StockNews = () => {
         setError("");
 
         try {
-            const page = Number(
-                localStorage.getItem("marketauxNextPage") || 1
-            );
+            const page = Number(localStorage.getItem("marketauxNextPage") || 1);
 
             const response = await axios.get(`${BASE_URL}/api/stock-news`, {
                 params: { page },
@@ -32,9 +30,7 @@ const StockNews = () => {
             }
 
             setArticles((previous) => {
-                const seen = new Set(
-                    previous.map((article) => article.uuid || article.url)
-                );
+                const seen = new Set(previous.map((article) => article.uuid || article.url));
 
                 const uniqueArticles = newArticles.filter((article) => {
                     const id = article.uuid || article.url;
@@ -48,30 +44,26 @@ const StockNews = () => {
                 return [...previous, ...uniqueArticles];
             });
 
-            localStorage.setItem(
-                "marketauxNextPage",
-                String(page + 1)
-            );
+            localStorage.setItem("marketauxNextPage", String(page + 1));
         } catch (err) {
-            setError(
-                err.response?.data?.message || "Failed to load stock news."
-            );
+            setError(err.response?.data?.message || "Failed to load stock news.");
         } finally {
             setLoading(false);
         }
     }, []);
 
     useEffect(() => {
-    fetchNews();
-    }, [fetchNews]);
+        fetchNews();
+    }, [fetchNews]); 
 
     return (
         <section className="stock-news">
             <div className="stockNewsHeader">
                 <h2>Latest Stock Market News</h2>
-                <button onClick={fetchNews} disabled={loading}>
-                    {loading ? "Loading..." : "Refresh News"}
-                </button>
+                {articles.length == 0 &&
+                    <button onClick={fetchNews} disabled={loading} className="btn btn-primary">
+                        {loading ? "Loading..." : "Refresh News"}
+                    </button>}
             </div>
             {error && <p>{error}</p>}
 
@@ -94,6 +86,11 @@ const StockNews = () => {
                     </article>
                 ))}
             </div>
+            {articles.length > 0 &&
+                <button onClick={fetchNews} className="btn btn-danger">
+                    load more
+                </button>
+                }
         </section>
     );
 };

@@ -11,8 +11,9 @@ const STOCKS = [
     { symbol: "SBIN", name: "State Bank of India", price: 780 },
     { symbol: "ITC", name: "ITC Limited", price: 420 },
     { symbol: "TATAMOTORS", name: "Tata Motors", price: 700 },
+    // { symbol: "WIPRO", name: "Wipro", price: 577.75 },
 ];
-
+ 
 const INITIAL_CASH = 100000;
 const money = (value) =>
     new Intl.NumberFormat("en-IN", {

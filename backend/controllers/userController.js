@@ -29,6 +29,44 @@ const getUser = async (req, res) => {
     }
 };
 
+
+const profileImage = async (req, res) => {
+    try {
+        const token = req.headers.authorization;
+        // if (!authHeader || !authHeader.startsWith("Bearer ")) {
+        //     return res.status(401).json({ message: "Unauthorized" });
+        // }
+
+        // Extract the token from "Bearer <token>"
+        // const token = authHeader.split(" ")[1];
+        const user = await User.findOne({ token });
+        if (!user) {
+            return res.status(401).json({ message: "Invalid token or user not found" });
+        }
+
+        if (!req.file) {
+            return res.status(400).json({ message: "Please upload an image" });
+        }
+
+        const updatedUser = await User.findByIdAndUpdate(
+            user._id,
+            {
+                image: {
+                    url: req.file.path,
+                    filename: req.file.filename
+                }
+            },
+            { new: true, runValidators: true }
+        );
+
+        return res.status(200).json({ message: "Profile image uploaded successfully", image: updatedUser.image });
+
+    } catch (error) {
+        return res.status(500).json({ message: "Failed to upload profile image", error: error.message });
+    }
+};
+
+
 const register = async (req, res) => {
     try {
         const { name, email, password, isAdult } = req.body;
@@ -77,4 +115,4 @@ const login = async (req, res) => {
     }
 }
 
-module.exports = { register, login, getUser };
+module.exports = { register, login, getUser, profileImage };
