@@ -51,18 +51,8 @@ input:focus {
     align-items: center;
 }
 
-/* .addInput input {
-    width: 200px;
-} */
-
 .addInput button {
-    /* height: 40px; */
     margin-bottom: auto;
-    /* white-space: nowrap; */
-}
-
-button {
-    /* height: fit-content; */
 }
 
 /* EXPENSE LIST HEADING */
@@ -164,8 +154,6 @@ button {
     animation: loading 1s linear infinite;
 }
 
-
-
 /* logout view */
 .expenseGuest {
     width: 90%;
@@ -186,7 +174,6 @@ button {
 }
 
 /* Wallet Icon */
-
 .expenseGuestIcon {
     width: 75px;
     height: 75px;
@@ -194,13 +181,10 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #fff1a8;
     border-radius: 20px;
-
     font-size: 32px;
     color: rgb(173, 93, 247);
-
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -224,14 +208,11 @@ button {
 }
 
 /* Features */
-
 .expenseFeatures {
     margin-top: 35px;
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
-
     text-align: left;
 }
 
@@ -239,13 +220,10 @@ button {
     display: flex;
     align-items: flex-start;
     gap: 15px;
-
     padding: 20px;
-
     background: #fffdf0;
     border: 1px solid #f0e7a5;
     border-radius: 16px;
-
     transition: all 0.25s ease;
 }
 
@@ -257,14 +235,11 @@ button {
 .featureIcon {
     min-width: 45px;
     height: 45px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #fff1a8;
     border-radius: 12px;
-
     font-size: 22px;
 }
 
@@ -283,7 +258,6 @@ button {
 }
 
 /* Bottom CTA */
-
 .expenseGuestBottom {
     margin-top: 35px;
     padding-top: 30px;
@@ -306,15 +280,11 @@ button {
     border: none;
     background: #222;
     color: white;
-
     padding: 12px 24px;
     border-radius: 10px;
-
     font-size: 15px;
     font-weight: 600;
-
     cursor: pointer;
-
     transition: all 0.25s ease;
 }
 
@@ -327,63 +297,6 @@ button {
     background: #000;
     box-shadow: 0 7px 18px rgba(0, 0, 0, 0.18);
 }
-
-/* Mobile */
-
-@media (max-width: 700px) {
-
-    .expenseGuest {
-        width: 94%;
-    }
-
-    .expenseGuestCard {
-        padding: 30px 20px;
-        border-radius: 20px;
-    }
-
-    .expenseGuestCard h3 {
-        font-size: 24px;
-    }
-
-    .expenseGuestDescription {
-        font-size: 14px;
-    }
-
-    .expenseFeatures {
-        grid-template-columns: 1fr;
-    }
-
-    .expenseFeature {
-        padding: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .expenseGuestCard {
-        padding: 25px 15px;
-    }
-
-    .expenseGuestIcon {
-        width: 65px;
-        height: 65px;
-        font-size: 27px;
-    }
-
-    .expenseGuestCard h3 {
-        font-size: 21px;
-    }
-
-    .expenseGuestBottom h5 {
-        font-size: 17px;
-    }
-
-    .expenseGuestBottom button {
-        width: 100%;
-    }
-}
-
-
 
 @keyframes loading {
     from {
@@ -412,15 +325,7 @@ button {
 
     .exp {
         display: flex;
-        /* flex-direction: column; */
-        /* gap: 5px;
-        margin: 0px;
-        padding: 0px; */
         flex-wrap: wrap;
-    }
-
-    .exp .add {
-        /* margin-top: -40px; */
     }
 }
 
@@ -472,6 +377,31 @@ button {
 
     #total {
         margin: 5px auto;
+    }
+
+    .expenseGuest {
+        width: 94%;
+    }
+
+    .expenseGuestCard {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .expenseGuestCard h3 {
+        font-size: 24px;
+    }
+
+    .expenseGuestDescription {
+        font-size: 14px;
+    }
+
+    .expenseFeatures {
+        grid-template-columns: 1fr;
+    }
+
+    .expenseFeature {
+        padding: 16px;
     }
 }
 
@@ -571,6 +501,28 @@ button {
         width: 100%;
         height: 40px;
     }
+
+    .expenseGuestCard {
+        padding: 25px 15px;
+    }
+
+    .expenseGuestIcon {
+        width: 65px;
+        height: 65px;
+        font-size: 27px;
+    }
+
+    .expenseGuestCard h3 {
+        font-size: 21px;
+    }
+
+    .expenseGuestBottom h5 {
+        font-size: 17px;
+    }
+
+    .expenseGuestBottom button {
+        width: 100%;
+    }
 }
 
 /* VERY SMALL MOBILE 360px AND BELOW */
@@ -610,7 +562,7 @@ button {
     background: #eaa7a7;
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb { 
     background: #797878;
     border-radius: 10px;
 }
@@ -618,182 +570,3 @@ button {
 ::-webkit-scrollbar-thumb:hover {
     background: #d9f0a7;
 }
-
-
-
-
-
-
-
-/* My CSS */
-/* .heading {
-    margin-top: 10px;
-}
-
-input {
-    height: 40px;
-    border-radius: 10px;
-    width: 200px;
-}
-
-.addInput {
-    display: flex;
-    gap: 10px;
-}
-
-.addExp {
-    border: 1px solid rgb(102, 101, 101);
-    border-radius: 10px;
-    box-shadow: 5px 5px 12px 3px black;
-    width: fit-content;
-    padding: 20px;
-    margin: 10px;
-    margin-top: 20px;
-    padding-bottom: 0px;
-}
-
-.addExp h3 {
-    text-align: center;
-}
-
-.search {
-    display: flex;
-    justify-content: space-between;
-}
-
-button {
-    height: fit-content;
-}
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-} */
-
-/* .cardBody {
-    background-color: rgba(218, 199, 175, 0.5);
-    width: 300px; */
-/* height: 200px; */
-/* margin: 5px;
-    margin-left: 35px;
-    padding: 30px;
-    text-align: center;
-    border-radius: 10px;
-} */
-
-/* .cardBody:hover { */
-/* box-shadow: 6px 7px 10px black,-2px -3px 10px black; */
-/* box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.6);
-} */
-
-/* .expBtn {
-    width: 95px;
-    margin: 10px;
-}
-
-.editContainer {
-    height: 120px;
-}
-
-.editInput {
-    margin: 5px auto;
-}
-
-.listHeading {
-    background-color: aliceblue;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 5px;
-    display: flex;
-    align-items: center; */
-/* gap: 500px; */
-/* } */
-
-/* .listHeading h1 {
-    flex: 1;
-    text-align: center;
-
-}
-
-#total {
-    background-color: rgba(250, 235, 215, 0.8);
-    padding: 10px;
-    border-radius: 5px;
-    margin: 5px;
-    font-weight: bold;
-    transition: transform 0.2s ease;
-}
-
-#total:hover {
-    transform: scale(1.05);
-}
-
-#head {
-    cursor: pointer;
-    display: inline-block;
-    transition: transform 0.1s ease;
-}
-
-#head:hover {
-    transform: scale(1.02);
-}
-
-.load { */
-/* border-top: 1px solid black; */
-/* border: 2px solid #ddd;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-    width: 30px;
-    height: 30px;
-    margin: auto;
-    border-radius: 50%;
-    animation: loading 1s linear infinite;
-}
-
-@keyframes loading {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-} */
-
-/* Width of scrollbar */
-/* ::-webkit-scrollbar {
-    width: 8px;
-} */
-
-/* Background of scrollbar */
-/* ::-webkit-scrollbar-track {
-    background: #eaa7a7;
-} */
-
-/* Moving part */
-/* ::-webkit-scrollbar-thumb {
-    background: #797878;
-    border-radius: 10px;
-} */
-
-/* When hovering */
-/* ::-webkit-scrollbar-thumb:hover {
-    background: #d9f0a7;
-} */
-
-/* .card-container { width: 95%; margin: 0 auto 30px auto; display: flex; flex-direction: column; gap: 10px; } */
-/* .cardBody { width: 100%; min-height: 65px; margin: 0; padding: 10px 20px; background-color: rgba(218, 199, 175, 0.5); border-radius: 8px; display: flex; align-items: center; transition: all 0.2s ease; } */
-/* .cardBody > div:not(.editContainer) { width: 100%; display: flex; align-items: center; } */
-/* .cardBody h3 { width: 40%; margin: 0; text-align: left; font-size: 18px; } */
-/* .cardBody h6 { width: 25%; margin: 0; text-align: left; font-size: 16px; } */
-/* .expBtn { width: 95px; margin: 0 5px; } */
-/* .editContainer { width: 100%; min-height: 50px; display: flex; align-items: center; gap: 10px; } */
-/* .editInput { width: 25%; height: 40px; margin: 0; } */
-/* .listHeading { background-color: aliceblue; margin-top: 30px; margin-bottom: 30px; padding: 5px; display: flex; align-items: center; } */
-/* .listHeading h1 { flex: 1; text-align: center; } */
-/* #total { background-color: rgba(250, 235, 215, 0.8); padding: 10px; border-radius: 5px; margin: 5px; font-weight: bold; transition: transform 0.2s ease; } */
-/* #total:hover { transform: scale(1.05); } */
-/* #head { cursor: pointer; display: inline-block; transition: transform 0.1s ease; } */
-/* #head:hover { transform: scale(1.02); } */

@@ -1,4 +1,4 @@
-.marketNews{
+.marketNews {
     display: block;
     padding: 1rem;
     width: fit-content;
@@ -11,7 +11,8 @@
     border-radius: 1rem;
     cursor: pointer;
 }
-.marketNews:hover{
+
+.marketNews:hover {
     scale: 1.03;
 }
 
@@ -52,21 +53,34 @@
 }
 
 .expenseChart {
-    width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-    padding: 10px;
-    margin: 20px 0;
-    background-color: rgba(189, 198, 245, 0.3);
+    /* width: 100%; */
+    /* min-width: 0; */
+    /* box-sizing: border-box; */
+    /* padding: 10px; */
+    /* margin: 20px 0; */
+    /* background-color: rgba(189, 198, 245, 0.3); */
     /* background-color: #f7eaf9; */
     /* background:linear-gradient(to right , #f6f7fc,#d7d9fd) ; */
-    border-radius: 10px;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2); */
 }
 
-/* .expenseChart:hover {
-    background-color: rgb(237, 231, 243);
-} */
+
+.expenseChart {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ede9fe;
+    border-radius: 20px;
+    padding-right: 20px;
+    padding-block: 24px;
+    box-shadow: 0 8px 30px rgba(109, 40, 217, 0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.expenseChart:hover {
+    box-shadow: 0 12px 35px rgba(109, 40, 217, 0.12);
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+}
 
 .expenseChart h2 {
     text-align: center;
@@ -75,7 +89,7 @@
     font-size: large;
 }
 
-.pieChart {
+/* .pieChart {
     width: 100%;
     min-width: 0;
     box-sizing: border-box;
@@ -84,6 +98,23 @@
     background-color: rgba(189, 198, 245, 0.3);
     border-radius: 10px;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+} */
+
+.pieChart{
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ede9fe;
+    border-radius: 20px;
+    padding-right: 20px;
+    padding-block: 24px;
+    box-shadow: 0 8px 30px rgba(109, 40, 217, 0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin: 10px 0;
+}
+
+.pieChart:hover{
+    box-shadow: 0 12px 35px rgba(109, 40, 217, 0.12);
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
 }
 
 .pieChart h2 {
@@ -561,7 +592,7 @@
         width: 100%;
         min-width: 0;
         margin: 10px 0;
-        padding: 8px;
+        /* padding: 8px; */
     }
 
     /* Landing page */

@@ -7,6 +7,6 @@ router.get("/", authMiddleware, getAllExpense);
 router.post("/", authMiddleware, addExpense);
 router.put("/:id", authMiddleware, editExpense);
 router.delete("/:id", authMiddleware, dltExpense);
-router.get("/search", searchExpense);
+router.get("/search", authMiddleware, searchExpense);
 
 module.exports = router; 

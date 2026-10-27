@@ -50,7 +50,7 @@ root.render(
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/investment' element={<Investment />} />
-        <Route path='/invest' element={<Invest />} />
+        {/* <Route path='/invest' element={<Invest />} /> */}
         <Route path='/news' element={<StockNews />} />
         <Route path='/*' element={<PageNotFound />} />
 

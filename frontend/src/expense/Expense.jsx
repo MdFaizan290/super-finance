@@ -113,7 +113,11 @@ function Expense() {
             fetchExpense();
             return;
         }
-        const exp = await axios.get(`${ApiUrl}/search?keyword=${keyword}`);
+        const exp = await axios.get(`${ApiUrl}/search?keyword=${keyword}`, {
+            headers: {
+                Authorization: token
+            }
+        });
         setExpense(exp.data);
         setKeyword("");
     }
@@ -159,7 +163,7 @@ function Expense() {
                     <h3 className="">Filter</h3>
                     <div className='addInput'>
                         <input placeholder="Enter Title" />
-                        <button className="btn btn-success" >Filter</button>
+                        <button className="btn btn-success" disabled>Filter</button>
                     </div>
                 </div>
             </div>
@@ -170,7 +174,7 @@ function Expense() {
             </div>
             {
                 loading ? (<div className='text-center fs-5'>Loading...<div className='load'></div></div>) : (expense.length === 0 ? (<p className='text-center fs-4 mt-5'>Add Expenses To See</p>) : (
-                    <div className="card-container">
+                    <div className="card-container mb-4">
                         {expense.map((exp) => (
                             <div className="cardBody mb-4">
                                 {

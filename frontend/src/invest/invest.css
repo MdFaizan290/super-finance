@@ -249,7 +249,7 @@
     box-shadow: 0 12px 30px rgba(92, 65, 183, 0.10);
 }
 
-.featureIcon {
+.featureIcons {
     width: 68px;
     height: 68px;
     display: flex;
@@ -260,22 +260,22 @@
     font-size: 27px;
 }
 
-.featureIcon.purple {
+.featureIcons.purple {
     color: #6336f6;
     background: #eee9ff;
 }
 
-.featureIcon.orange {
+.featureIcons.orange {
     color: #ffa900;
     background: #fff1df;
 }
 
-.featureIcon.green {
+.featureIcons.green {
     color: #14b87a;
     background: #e4f8ee;
 }
 
-.featureIcon.red {
+.featureIcons.red {
     color: #ff4b56;
     background: #ffe5e7;
 }
@@ -469,7 +469,7 @@
         padding: 18px 10px;
     }
 
-    .featureIcon {
+    .featureIcons {
         width: 55px;
         height: 55px;
         font-size: 22px;

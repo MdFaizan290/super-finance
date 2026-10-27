@@ -69,6 +69,7 @@ const searchExpense = async (req, res) => {
         const keyword = req.query.keyword;
         // console.log(keyword);
         const expense = await Expense.find({
+            userId: req.user._id,
             title: {
                 $regex: keyword,
                 $options: "i",

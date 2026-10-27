@@ -2,7 +2,7 @@
     padding: 1rem;
 } */
 
-.stock-news h2{
+.stock-news h2 {
     text-align: center;
     margin: 1rem;
 }
@@ -25,7 +25,7 @@
 .article .image {
     display: block;
     margin: auto;
-    width: 60%; 
+    width: 60%;
     border-radius: 1rem;
 }
 
@@ -34,9 +34,44 @@
     margin: 1rem;
 }
 
-.btn-danger{
-    display: inline-block;
-    align-items: center;
+.stock-btn {
+    display: block;
+    /* align-items: center;
+    text-align: center; */
+    margin: 1rem auto;
+    width: 8rem;
+    padding-block: 0.7rem;
+}
+
+.loader {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+.article-error{
     text-align: center;
-    margin: 0 auto;
+    align-items: center;
+    /* margin: 5rem; */
+    background-color: rgb(248, 178, 178);
+    width: fit-content;
+    margin: auto;
+    padding: 1rem;
+    font-size: large;
+    border-radius: 0.4rem;
+}
+
+.article-error i{
+    color: red;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+.article-error:hover{
+    background-color: rgb(249, 170, 170);
+    scale: 1.02;
 }

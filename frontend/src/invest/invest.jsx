@@ -120,7 +120,7 @@ const Invest = () => {
                                 className="investmentFeatureCard"
                                 key={feature.title}
                             >
-                                <div className={`featureIcon ${feature.color}`}>
+                                <div className={`featureIcons ${feature.color}`}>
                                     <i className={`fa-solid ${feature.icon}`}></i>
                                 </div>
 

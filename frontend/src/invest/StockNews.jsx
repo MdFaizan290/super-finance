@@ -9,6 +9,7 @@ const StockNews = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
+
     const fetchNews = useCallback(async () => {
         setLoading(true);
         setError("");
@@ -54,18 +55,18 @@ const StockNews = () => {
 
     useEffect(() => {
         fetchNews();
-    }, [fetchNews]); 
+    }, [fetchNews]);
 
     return (
         <section className="stock-news">
             <div className="stockNewsHeader">
-                <h2>Latest Stock Market News</h2>
+                <h2>Latest Finance Market News</h2>
                 {articles.length == 0 &&
-                    <button onClick={fetchNews} disabled={loading} className="btn btn-primary">
+                    <button onClick={fetchNews} disabled={loading} className="btn btn-primary stock-btn">
                         {loading ? "Loading..." : "Refresh News"}
                     </button>}
             </div>
-            {error && <p>{error}</p>}
+            {error && <p className="article-error"><i className="fa-solid fa-triangle-exclamation"></i> {error}</p>}
 
             <div className="stockNewsGrid">
                 {articles.map((article) => (
@@ -81,16 +82,21 @@ const StockNews = () => {
                         </small>
 
                         <a className="source-link" href={article.url} target="_blank" rel="noopener noreferrer">
-                            Read Full News
+                           <i class="fa-solid fa-up-right-from-square"></i> Read Full News
                         </a>
                     </article>
                 ))}
             </div>
             {articles.length > 0 &&
-                <button onClick={fetchNews} className="btn btn-danger">
-                    load more
+                <button onClick={fetchNews} className="btn btn-danger stock-btn">
+                    {loading ? (
+                        <><div className="loader"></div><span>Loading...</span></>
+                    ) : (
+                        <><span>load more</span></>
+                    )}
+
                 </button>
-                }
+            }
         </section>
     );
 };

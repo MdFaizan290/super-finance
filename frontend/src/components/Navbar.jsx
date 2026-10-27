@@ -179,7 +179,7 @@ function Navbar() {
 
                 {token ? (
                     <button className="navProfile" onClick={() => setSidebarOpen(true)} aria-label="Open account sidebar">
-                        <img src={profileImage} alt="Profile" />
+                        <img src={profileImage ? profileImage :"/profile.jpg"} alt="Profile" />
                         <span>{userDetail?.name || "My Account"}</span>
                         {/* <i className="fa-solid fa-chevron-down"></i> */}
                     </button>
@@ -209,7 +209,7 @@ function Navbar() {
 
                                 <div className="profileImageWrapper">
                                     <img
-                                        src={profileImage}
+                                        src={profileImage ? profileImage :"/profile.jpg"}
                                         alt="Profile"
                                         className="sidebarProfileImage"
                                         onClick={() => setShowFullImage(true)}
@@ -375,7 +375,7 @@ function Navbar() {
                     </button>
 
                     <img
-                        src={profileImage}
+                        src={profileImage ? profileImage : "/profile.jpg"}
                         alt="Full profile"
                         className="fullProfileImage"
                         onClick={(e) => e.stopPropagation()}
